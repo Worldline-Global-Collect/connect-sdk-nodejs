@@ -1,0 +1,37 @@
+{
+  "$schema" : "http://json-schema.org/draft-04/schema#",
+  "type" : "object",
+  "properties" : {
+    "amountOfMoney" : {
+      "$ref" : "#/definitions/AmountOfMoney"
+    },
+    "contactPerson" : {
+      "type" : "string"
+    },
+    "emailAddress" : {
+      "type" : "string"
+    },
+    "replyTo" : {
+      "type" : "string"
+    },
+    "requestMessage" : {
+      "type" : "string"
+    }
+  },
+  "additionalProperties" : false,
+  "definitions" : {
+    "AmountOfMoney" : {
+      "type" : "object",
+      "properties" : {
+        "amount" : {
+          "type" : "integer",
+          "maximum" : 9223372036854775807
+        },
+        "currencyCode" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    }
+  }
+}

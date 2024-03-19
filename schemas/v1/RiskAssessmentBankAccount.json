@@ -1,0 +1,686 @@
+{
+  "$schema" : "http://json-schema.org/draft-04/schema#",
+  "type" : "object",
+  "properties" : {
+    "bankAccountBban" : {
+      "$ref" : "#/definitions/BankAccountBban"
+    },
+    "bankAccountIban" : {
+      "$ref" : "#/definitions/BankAccountIban"
+    },
+    "fraudFields" : {
+      "$ref" : "#/definitions/FraudFields"
+    },
+    "merchant" : {
+      "$ref" : "#/definitions/MerchantRiskAssessment"
+    },
+    "order" : {
+      "$ref" : "#/definitions/OrderRiskAssessment"
+    },
+    "paymentProductId" : {
+      "type" : "integer",
+      "maximum" : 2147483647
+    }
+  },
+  "additionalProperties" : false,
+  "definitions" : {
+    "AdditionalOrderInputAirlineData" : {
+      "type" : "object",
+      "properties" : {
+        "airlineData" : {
+          "$ref" : "#/definitions/AirlineData"
+        },
+        "lodgingData" : {
+          "$ref" : "#/definitions/LodgingData"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "Address" : {
+      "type" : "object",
+      "properties" : {
+        "additionalInfo" : {
+          "type" : "string"
+        },
+        "city" : {
+          "type" : "string"
+        },
+        "countryCode" : {
+          "type" : "string"
+        },
+        "houseNumber" : {
+          "type" : "string"
+        },
+        "state" : {
+          "type" : "string"
+        },
+        "stateCode" : {
+          "type" : "string"
+        },
+        "street" : {
+          "type" : "string"
+        },
+        "zip" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "AddressPersonal" : {
+      "type" : "object",
+      "properties" : {
+        "additionalInfo" : {
+          "type" : "string"
+        },
+        "city" : {
+          "type" : "string"
+        },
+        "countryCode" : {
+          "type" : "string"
+        },
+        "houseNumber" : {
+          "type" : "string"
+        },
+        "name" : {
+          "$ref" : "#/definitions/PersonalName"
+        },
+        "state" : {
+          "type" : "string"
+        },
+        "stateCode" : {
+          "type" : "string"
+        },
+        "street" : {
+          "type" : "string"
+        },
+        "zip" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "AirlineData" : {
+      "type" : "object",
+      "properties" : {
+        "agentNumericCode" : {
+          "type" : "string"
+        },
+        "code" : {
+          "type" : "string"
+        },
+        "flightDate" : {
+          "type" : "string"
+        },
+        "flightLegs" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/AirlineFlightLeg"
+          },
+          "minItems" : 0,
+          "uniqueItems" : false
+        },
+        "invoiceNumber" : {
+          "type" : "string"
+        },
+        "isETicket" : {
+          "type" : "boolean"
+        },
+        "isRegisteredCustomer" : {
+          "type" : "boolean"
+        },
+        "isRestrictedTicket" : {
+          "type" : "boolean"
+        },
+        "isThirdParty" : {
+          "type" : "boolean"
+        },
+        "issueDate" : {
+          "type" : "string"
+        },
+        "merchantCustomerId" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "numberInParty" : {
+          "type" : "integer",
+          "maximum" : 2147483647
+        },
+        "passengerName" : {
+          "type" : "string"
+        },
+        "passengers" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/AirlinePassenger"
+          },
+          "minItems" : 0,
+          "uniqueItems" : false
+        },
+        "placeOfIssue" : {
+          "type" : "string"
+        },
+        "pnr" : {
+          "type" : "string"
+        },
+        "pointOfSale" : {
+          "type" : "string"
+        },
+        "posCityCode" : {
+          "type" : "string"
+        },
+        "ticketDeliveryMethod" : {
+          "type" : "string"
+        },
+        "ticketNumber" : {
+          "type" : "string"
+        },
+        "totalFare" : {
+          "type" : "integer",
+          "maximum" : 10000
+        },
+        "totalFee" : {
+          "type" : "integer",
+          "maximum" : 10000
+        },
+        "totalTaxes" : {
+          "type" : "integer",
+          "maximum" : 10000
+        },
+        "travelAgencyName" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "AirlineFlightLeg" : {
+      "type" : "object",
+      "properties" : {
+        "airlineClass" : {
+          "type" : "string"
+        },
+        "arrivalAirport" : {
+          "type" : "string"
+        },
+        "arrivalTime" : {
+          "type" : "string"
+        },
+        "carrierCode" : {
+          "type" : "string"
+        },
+        "conjunctionTicket" : {
+          "type" : "string"
+        },
+        "couponNumber" : {
+          "type" : "string"
+        },
+        "date" : {
+          "type" : "string"
+        },
+        "departureTime" : {
+          "type" : "string"
+        },
+        "endorsementOrRestriction" : {
+          "type" : "string"
+        },
+        "exchangeTicket" : {
+          "type" : "string"
+        },
+        "fare" : {
+          "type" : "string"
+        },
+        "fareBasis" : {
+          "type" : "string"
+        },
+        "fee" : {
+          "type" : "integer",
+          "maximum" : 10000
+        },
+        "flightNumber" : {
+          "type" : "string"
+        },
+        "number" : {
+          "type" : "integer",
+          "maximum" : 2147483647
+        },
+        "originAirport" : {
+          "type" : "string"
+        },
+        "passengerClass" : {
+          "type" : "string"
+        },
+        "serviceClass" : {
+          "type" : "string"
+        },
+        "stopoverCode" : {
+          "type" : "string"
+        },
+        "taxes" : {
+          "type" : "integer",
+          "maximum" : 10000
+        }
+      },
+      "additionalProperties" : false
+    },
+    "AirlinePassenger" : {
+      "type" : "object",
+      "properties" : {
+        "firstName" : {
+          "type" : "string"
+        },
+        "surname" : {
+          "type" : "string"
+        },
+        "surnamePrefix" : {
+          "type" : "string"
+        },
+        "title" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "AmountOfMoney" : {
+      "type" : "object",
+      "properties" : {
+        "amount" : {
+          "type" : "integer",
+          "maximum" : 9223372036854775807
+        },
+        "currencyCode" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "BankAccountBban" : {
+      "type" : "object",
+      "properties" : {
+        "accountHolderName" : {
+          "type" : "string"
+        },
+        "accountNumber" : {
+          "type" : "string"
+        },
+        "bankCode" : {
+          "type" : "string"
+        },
+        "bankName" : {
+          "type" : "string"
+        },
+        "branchCode" : {
+          "type" : "string"
+        },
+        "checkDigit" : {
+          "type" : "string"
+        },
+        "countryCode" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "BankAccountIban" : {
+      "type" : "object",
+      "properties" : {
+        "accountHolderName" : {
+          "type" : "string"
+        },
+        "iban" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "ContactDetailsRiskAssessment" : {
+      "type" : "object",
+      "properties" : {
+        "emailAddress" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "CustomerAccountRiskAssessment" : {
+      "type" : "object",
+      "properties" : {
+        "hasForgottenPassword" : {
+          "type" : "boolean"
+        },
+        "hasPassword" : {
+          "type" : "boolean"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "CustomerDeviceRiskAssessment" : {
+      "type" : "object",
+      "properties" : {
+        "defaultFormFill" : {
+          "type" : "string"
+        },
+        "deviceFingerprintTransactionId" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "CustomerRiskAssessment" : {
+      "type" : "object",
+      "properties" : {
+        "account" : {
+          "$ref" : "#/definitions/CustomerAccountRiskAssessment"
+        },
+        "accountType" : {
+          "type" : "string"
+        },
+        "billingAddress" : {
+          "$ref" : "#/definitions/Address"
+        },
+        "contactDetails" : {
+          "$ref" : "#/definitions/ContactDetailsRiskAssessment"
+        },
+        "device" : {
+          "$ref" : "#/definitions/CustomerDeviceRiskAssessment"
+        },
+        "isPreviousCustomer" : {
+          "type" : "boolean"
+        },
+        "locale" : {
+          "type" : "string"
+        },
+        "personalInformation" : {
+          "$ref" : "#/definitions/PersonalInformationRiskAssessment"
+        },
+        "shippingAddress" : {
+          "$ref" : "#/definitions/AddressPersonal"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "FraudFields" : {
+      "type" : "object",
+      "properties" : {
+        "addressesAreIdentical" : {
+          "type" : "boolean"
+        },
+        "blackListData" : {
+          "type" : "string"
+        },
+        "cardOwnerAddress" : {
+          "$ref" : "#/definitions/Address"
+        },
+        "customerIpAddress" : {
+          "type" : "string"
+        },
+        "defaultFormFill" : {
+          "type" : "string"
+        },
+        "deviceFingerprintActivated" : {
+          "type" : "boolean"
+        },
+        "deviceFingerprintTransactionId" : {
+          "type" : "string"
+        },
+        "giftCardType" : {
+          "type" : "string"
+        },
+        "giftMessage" : {
+          "type" : "string"
+        },
+        "hasForgottenPwd" : {
+          "type" : "boolean"
+        },
+        "hasPassword" : {
+          "type" : "boolean"
+        },
+        "isPreviousCustomer" : {
+          "type" : "boolean"
+        },
+        "orderTimezone" : {
+          "type" : "string"
+        },
+        "shipComments" : {
+          "type" : "string"
+        },
+        "shipmentTrackingNumber" : {
+          "type" : "string"
+        },
+        "shippingDetails" : {
+          "$ref" : "#/definitions/FraudFieldsShippingDetails"
+        },
+        "userData" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          },
+          "minItems" : 0,
+          "uniqueItems" : false
+        },
+        "website" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "FraudFieldsShippingDetails" : {
+      "type" : "object",
+      "properties" : {
+        "methodDetails" : {
+          "type" : "string"
+        },
+        "methodSpeed" : {
+          "type" : "integer",
+          "maximum" : 2147483647
+        },
+        "methodType" : {
+          "type" : "integer",
+          "maximum" : 32767
+        }
+      },
+      "additionalProperties" : false
+    },
+    "LodgingCharge" : {
+      "type" : "object",
+      "properties" : {
+        "chargeAmount" : {
+          "type" : "integer",
+          "maximum" : 9223372036854775807
+        },
+        "chargeAmountCurrencyCode" : {
+          "type" : "string"
+        },
+        "chargeType" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "LodgingData" : {
+      "type" : "object",
+      "properties" : {
+        "charges" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LodgingCharge"
+          },
+          "minItems" : 0,
+          "uniqueItems" : false
+        },
+        "checkInDate" : {
+          "type" : "string"
+        },
+        "checkOutDate" : {
+          "type" : "string"
+        },
+        "folioNumber" : {
+          "type" : "string"
+        },
+        "isConfirmedReservation" : {
+          "type" : "boolean"
+        },
+        "isFacilityFireSafetyConform" : {
+          "type" : "boolean"
+        },
+        "isNoShow" : {
+          "type" : "boolean"
+        },
+        "isPreferenceSmokingRoom" : {
+          "type" : "boolean"
+        },
+        "numberOfAdults" : {
+          "type" : "integer",
+          "maximum" : 2147483647
+        },
+        "numberOfNights" : {
+          "type" : "integer",
+          "maximum" : 2147483647
+        },
+        "numberOfRooms" : {
+          "type" : "integer",
+          "maximum" : 2147483647
+        },
+        "programCode" : {
+          "type" : "string"
+        },
+        "propertyCustomerServicePhoneNumber" : {
+          "type" : "string"
+        },
+        "propertyPhoneNumber" : {
+          "type" : "string"
+        },
+        "renterName" : {
+          "type" : "string"
+        },
+        "rooms" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LodgingRoom"
+          },
+          "minItems" : 0,
+          "uniqueItems" : false
+        }
+      },
+      "additionalProperties" : false
+    },
+    "LodgingRoom" : {
+      "type" : "object",
+      "properties" : {
+        "dailyRoomRate" : {
+          "type" : "string"
+        },
+        "dailyRoomRateCurrencyCode" : {
+          "type" : "string"
+        },
+        "dailyRoomTaxAmount" : {
+          "type" : "string"
+        },
+        "dailyRoomTaxAmountCurrencyCode" : {
+          "type" : "string"
+        },
+        "numberOfNightsAtRoomRate" : {
+          "type" : "integer",
+          "maximum" : 2147483647
+        },
+        "roomLocation" : {
+          "type" : "string"
+        },
+        "roomNumber" : {
+          "type" : "string"
+        },
+        "typeOfBed" : {
+          "type" : "string"
+        },
+        "typeOfRoom" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "MerchantRiskAssessment" : {
+      "type" : "object",
+      "properties" : {
+        "websiteUrl" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "OrderRiskAssessment" : {
+      "type" : "object",
+      "properties" : {
+        "additionalInput" : {
+          "$ref" : "#/definitions/AdditionalOrderInputAirlineData"
+        },
+        "amountOfMoney" : {
+          "$ref" : "#/definitions/AmountOfMoney"
+        },
+        "customer" : {
+          "$ref" : "#/definitions/CustomerRiskAssessment"
+        },
+        "shipping" : {
+          "$ref" : "#/definitions/ShippingRiskAssessment"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "PersonalInformationRiskAssessment" : {
+      "type" : "object",
+      "properties" : {
+        "name" : {
+          "$ref" : "#/definitions/PersonalNameRiskAssessment"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "PersonalName" : {
+      "type" : "object",
+      "properties" : {
+        "firstName" : {
+          "type" : "string"
+        },
+        "surname" : {
+          "type" : "string"
+        },
+        "surnamePrefix" : {
+          "type" : "string"
+        },
+        "title" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "PersonalNameRiskAssessment" : {
+      "type" : "object",
+      "properties" : {
+        "firstName" : {
+          "type" : "string"
+        },
+        "surname" : {
+          "type" : "string"
+        },
+        "surnamePrefix" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "ShippingRiskAssessment" : {
+      "type" : "object",
+      "properties" : {
+        "address" : {
+          "$ref" : "#/definitions/AddressPersonal"
+        },
+        "comments" : {
+          "type" : "string"
+        },
+        "trackingNumber" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    }
+  }
+}
