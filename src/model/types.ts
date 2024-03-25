@@ -1,4 +1,5 @@
 import { Readable } from "stream";
+import { Agent } from "http";
 import { ShoppingCartExtension } from "./domain";
 
 export interface Authenticator {
@@ -22,6 +23,11 @@ export interface Configuration {
   shoppingCartExtension?: ShoppingCartExtension;
   obfuscationRules?: Record<string, ObfuscationRule>;
   proxy?: ProxyConfiguration;
+  connectionOptions?: ConnectionOptions;
+}
+
+export interface ConnectionOptions {
+  agent?: Agent;
 }
 
 export interface FileMetadata {
@@ -99,6 +105,7 @@ export interface ProxyConfiguration {
 export interface SdkContext {
   getEndpoint(): HttpEndpoint;
   getProxy(): ProxyConfiguration | undefined;
+  getConnectionOptions(): ConnectionOptions | undefined;
   getAuthenticator(): Authenticator;
   getLogger(): Logger;
   setLogger(logger: Logger): void;

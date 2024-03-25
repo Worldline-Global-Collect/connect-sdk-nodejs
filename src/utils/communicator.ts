@@ -71,6 +71,11 @@ async function prepareRequest(request: SdkRequest, sdkContext: SdkContext, optio
       options.headers!["Proxy-Authorization"] = "Basic " + Buffer.from(proxy.credentials).toString("base64");
     }
   }
+
+  const connectionOptions = sdkContext.getConnectionOptions();
+  if (connectionOptions?.agent) {
+    options.agent = connectionOptions.agent;
+  }
 }
 
 function handleResponse(

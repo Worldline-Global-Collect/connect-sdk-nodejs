@@ -24,7 +24,7 @@ describe("riskassessments", () => {
         }
       };
 
-      const response = await client.v1.riskassessments.bankaccounts(config.merchantId, body, null);
+      const response = await client.v1.riskassessments.bankaccounts(config.merchantId, body);
       expect(response.status).toBe(200);
       expect(response.body).not.toBeNull();
 

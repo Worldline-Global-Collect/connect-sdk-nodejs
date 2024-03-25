@@ -118,7 +118,7 @@ Modules for API clients and calls like `connect-sdk-nodejs/lib/v1/payments` or `
 ```typescript
 import { create as createPayment } from "connect-sdk-nodejs/lib/v1/payments/create";
 import { newPaymentsClient } from "connect-sdk-nodejs/lib/v1/payments";
-import { CreatePaymentResponse} from "connect-sdk-nodejs/lib/v1/model/domain";
+import { CreatePaymentResponse } from "connect-sdk-nodejs/lib/v1/model/domain";
 
 const createResponse = await createPayment(sdkContext)(merchantId, body, paymentContext);
 const responseBody = createResponse.body as CreatePaymentResponse;

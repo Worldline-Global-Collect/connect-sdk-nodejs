@@ -27,7 +27,7 @@ describe("token", () => {
       }
     };
 
-    const createResponse = await client.v1.tokens.create(config.merchantId, body, null);
+    const createResponse = await client.v1.tokens.create(config.merchantId, body);
     expect(createResponse.status).toBeGreaterThanOrEqual(200);
     expect(createResponse.status).toBeLessThanOrEqual(201);
     expect(createResponse.body).not.toBeNull();

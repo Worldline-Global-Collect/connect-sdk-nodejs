@@ -19,6 +19,10 @@ describe("assertSuccess", () => {
       };
       const asserted = assertSuccess(response);
       expect(asserted).toBe(response);
+      // check separate properties too, to ensure that the right type is returned
+      expect(asserted.status).toBe(response.status);
+      expect(asserted.isSuccess).toBe(true);
+      expect(asserted.body).toBe(response.body);
     });
 
     test("!isSuccess", () => {
@@ -55,6 +59,11 @@ describe("assertSuccess", () => {
       };
       const asserted = assertSuccess(response);
       expect(asserted).toBe(response);
+      // check separate properties too, to ensure that the right type is returned
+      expect(asserted.status).toBe(response.status);
+      expect(asserted.isSuccess).toBe(true);
+      expect(asserted.body).toBe(response.body);
+      expect(asserted.file).toBe(response.file);
     });
 
     test("!isSuccess", () => {

@@ -1,4 +1,4 @@
-import { Authenticator, CommunicatorLogger, Configuration, HttpEndpoint, Logger, ObfuscationRule, ProxyConfiguration, SdkContext } from "../model";
+import { Authenticator, CommunicatorLogger, Configuration, ConnectionOptions, HttpEndpoint, Logger, ObfuscationRule, ProxyConfiguration, SdkContext } from "../model";
 import { ShoppingCartExtension } from "../model/domain";
 import { V1HMACAuthenticator } from "./authentication";
 
@@ -15,6 +15,7 @@ function defaultPort(scheme: "http" | "https"): number {
 class SdkContextImpl implements SdkContext {
   private readonly endpoint: HttpEndpoint;
   private readonly proxy?: ProxyConfiguration;
+  private readonly connectionOptions?: ConnectionOptions;
   private readonly authenticator: Authenticator;
   private readonly integrator: string;
   private readonly shoppingCartExtension?: ShoppingCartExtension;
@@ -29,6 +30,7 @@ class SdkContextImpl implements SdkContext {
       port: configuration.port ?? defaultPort(configuration.scheme ?? "https")
     };
     this.proxy = configuration.proxy;
+    this.connectionOptions = configuration.connectionOptions;
     this.authenticator = new V1HMACAuthenticator(configuration.apiKeyId, configuration.secretApiKey);
 
     this.logger = configuration.logger ? toLogger(configuration.logger) : consoleLogger;
@@ -57,6 +59,10 @@ class SdkContextImpl implements SdkContext {
 
   getProxy(): ProxyConfiguration | undefined {
     return this.proxy;
+  }
+
+  getConnectionOptions(): ConnectionOptions | undefined {
+    return this.connectionOptions;
   }
 
   getAuthenticator(): Authenticator {

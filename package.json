@@ -1,6 +1,6 @@
 {
   "name": "connect-sdk-nodejs",
-  "version": "5.0.0",
+  "version": "5.1.0",
   "description": "SDK to communicate with the Worldline Global Collect platform using the Worldline Connect Server API",
   "homepage": "https://github.com/Worldline-Global-Collect/connect-sdk-nodejs#readme",
   "bugs": {
@@ -30,6 +30,7 @@
     "test:integration": "jest --group=integration"
   },
   "dependencies": {
+    "dateformat": "^4.6.3",
     "form-data": "^4.0.0",
     "jsonschema": "^1.4.1",
     "lodash": "^4.17.21",
@@ -50,7 +51,6 @@
     "@typescript-eslint/eslint-plugin": "^2.34.0",
     "@typescript-eslint/parser": "^2.34.0",
     "body-parser": "^1.20.2",
-    "dateformat": "^4.6.3",
     "eslint": "^7.32.0",
     "express": "^4.18.2",
     "husky": "^4.3.8",

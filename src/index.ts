@@ -20,17 +20,17 @@ export const obfuscate: ObfuscationRules = {
 };
 
 /**
- * Asserts that an {@link SdkResponse} is successful.
- * @returns The response if it is successful.
- * @throws {@link SdkApiError} if the response is not successful.
- */
-export function assertSuccess<T, E>(response: SdkResponse<T, E>): SdkSuccessResponse<T>;
-/**
  * Asserts that an {@link SdkBinaryResponse} is successful.
  * @returns The response if it is successful.
  * @throws {@link SdkApiError} if the response is not successful.
  */
 export function assertSuccess<E>(response: SdkBinaryResponse<E>): SdkBinarySuccessResponse;
+/**
+ * Asserts that an {@link SdkResponse} is successful.
+ * @returns The response if it is successful.
+ * @throws {@link SdkApiError} if the response is not successful.
+ */
+export function assertSuccess<T, E>(response: SdkResponse<T, E>): SdkSuccessResponse<T>;
 export function assertSuccess<T, E>(response: SdkResponse<T, E> | SdkBinaryResponse<E>): SdkSuccessResponse<T> | SdkBinarySuccessResponse {
   if (response.isSuccess) {
     return response;
