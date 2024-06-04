@@ -489,6 +489,7 @@ export interface CardPaymentMethodSpecificOutput extends AbstractPaymentMethodSp
   card?: CardEssentials | null;
   fraudResults?: CardFraudResults | null;
   initialSchemeTransactionId?: string | null;
+  networkTokenUsed?: boolean | null;
   schemeTransactionId?: string | null;
   threeDSecureResults?: ThreeDSecureResults | null;
   token?: string | null;
@@ -1685,6 +1686,7 @@ export interface OrderLineDetails {
   discountAmount?: number | null;
   googleProductCategoryId?: number | null;
   lineAmountTotal?: number | null;
+  naicsCommodityCode?: string | null;
   productCategory?: string | null;
   productCode?: string | null;
   productName?: string | null;
@@ -2423,6 +2425,7 @@ export interface Shipping {
   emailAddress?: string | null;
   firstUsageDate?: string | null;
   isFirstUsage?: boolean | null;
+  shippedFromZip?: string | null;
   trackingNumber?: string | null;
   type?: string | null;
 }

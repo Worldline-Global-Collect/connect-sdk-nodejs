@@ -1,4 +1,4 @@
-# Worldlline Connect Node.js SDK
+# Worldline Connect Node.js SDK
 
 ## Introduction
 
@@ -22,7 +22,7 @@ This repository consists out of three main components:
 
 ## Requirements
 
-Node.js 8 or higher is required.
+Node.js 12 or higher is required.
 
 ## Installation
 

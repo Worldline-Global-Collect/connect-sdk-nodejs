@@ -1673,6 +1673,9 @@
           "type" : "integer",
           "maximum" : 9223372036854775807
         },
+        "naicsCommodityCode" : {
+          "type" : "string"
+        },
         "productCategory" : {
           "type" : "string"
         },
@@ -2139,6 +2142,9 @@
         },
         "isFirstUsage" : {
           "type" : "boolean"
+        },
+        "shippedFromZip" : {
+          "type" : "string"
         },
         "trackingNumber" : {
           "type" : "string"
