@@ -18,8 +18,8 @@ interface ServerMetaInfo {
 export function serverMetaInfo(sdkContext: SdkContext): Header {
   const info: ServerMetaInfo = {
     sdkCreator: "Worldline",
-    sdkIdentifier: "NodejsServerSDK/v5.2.0",
-    platformIdentifier: process.env["OS"] + " Node.js/" + process.versions.node,
+    sdkIdentifier: "NodejsServerSDK/v5.3.0",
+    platformIdentifier: `${process.env["OS"]} Node.js/${process.versions.node}`,
     integrator: sdkContext.getIntegrator()
   };
   if (sdkContext.getShoppingCartExtension() !== null) {

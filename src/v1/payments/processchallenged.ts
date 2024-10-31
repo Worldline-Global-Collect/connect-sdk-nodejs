@@ -13,7 +13,7 @@ export function processchallenged(
     return json(
       {
         method: "POST",
-        modulePath: "/v1/" + merchantId + "/payments/" + paymentId + "/processchallenged",
+        modulePath: `/v1/${merchantId}/payments/${paymentId}/processchallenged`,
         body: null,
         paymentContext: paymentContext
       },

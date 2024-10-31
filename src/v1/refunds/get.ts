@@ -11,7 +11,7 @@ export function get(sdkContext: SdkContext): (merchantId: string, refundId: stri
     return json(
       {
         method: "GET",
-        modulePath: "/v1/" + merchantId + "/refunds/" + refundId,
+        modulePath: `/v1/${merchantId}/refunds/${refundId}`,
         body: null,
         paymentContext: paymentContext
       },

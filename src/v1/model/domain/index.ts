@@ -565,6 +565,7 @@ export interface CashPaymentProductWithRedirectSpecificInputBase {
 }
 
 export interface CompanyInformation {
+  dateOfIncorporation?: string | null;
   name?: string | null;
   vatNumber?: string | null;
 }
@@ -1735,6 +1736,7 @@ export interface OrderStatusOutput {
 
 export interface OrderTypeInformation {
   fundingType?: string | null;
+  paymentCode?: string | null;
   purchaseType?: string | null;
   transactionType?: string | null;
   usageType?: string | null;
@@ -2125,7 +2127,6 @@ export interface RedirectPaymentMethodSpecificInput extends AbstractRedirectPaym
   isRecurring?: boolean | null;
   paymentProduct4101SpecificInput?: RedirectPaymentProduct4101SpecificInput | null;
   paymentProduct809SpecificInput?: RedirectPaymentProduct809SpecificInput | null;
-  paymentProduct816SpecificInput?: RedirectPaymentProduct816SpecificInput | null;
   paymentProduct840SpecificInput?: RedirectPaymentProduct840SpecificInput | null;
   paymentProduct861SpecificInput?: RedirectPaymentProduct861SpecificInput | null;
   paymentProduct863SpecificInput?: RedirectPaymentProduct863SpecificInput | null;
@@ -2171,10 +2172,6 @@ export interface RedirectPaymentProduct809SpecificInput {
    */
   expirationPeriod?: string | null;
   issuerId?: string | null;
-}
-
-export interface RedirectPaymentProduct816SpecificInput {
-  bankAccountIban?: BankAccountIban | null;
 }
 
 export interface RedirectPaymentProduct840SpecificInput extends AbstractRedirectPaymentProduct840SpecificInput {

@@ -11,7 +11,7 @@ export function cancel(sdkContext: SdkContext): (merchantId: string, refundId: s
     return json(
       {
         method: "POST",
-        modulePath: "/v1/" + merchantId + "/refunds/" + refundId + "/cancel",
+        modulePath: `/v1/${merchantId}/refunds/${refundId}/cancel`,
         body: null,
         paymentContext: paymentContext
       },

@@ -14,7 +14,7 @@ export function get(
     return json(
       {
         method: "GET",
-        modulePath: "/v1/" + merchantId + "/productgroups/" + paymentProductGroupId,
+        modulePath: `/v1/${merchantId}/productgroups/${paymentProductGroupId}`,
         body: null,
         paymentContext: paymentContext
       },

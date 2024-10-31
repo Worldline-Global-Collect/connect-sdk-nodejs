@@ -404,6 +404,9 @@
     "CompanyInformation" : {
       "type" : "object",
       "properties" : {
+        "dateOfIncorporation" : {
+          "type" : "string"
+        },
         "name" : {
           "type" : "string"
         },
@@ -1025,6 +1028,9 @@
       "type" : "object",
       "properties" : {
         "fundingType" : {
+          "type" : "string"
+        },
+        "paymentCode" : {
           "type" : "string"
         },
         "purchaseType" : {

@@ -31,7 +31,7 @@ export function approve(
     return json(
       {
         method: "POST",
-        modulePath: "/v1/" + merchantId + "/payments/" + paymentId + "/approve",
+        modulePath: `/v1/${merchantId}/payments/${paymentId}/approve`,
         body: postData,
         paymentContext: paymentContext
       },

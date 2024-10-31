@@ -26,7 +26,7 @@ export function capture(
     return json(
       {
         method: "POST",
-        modulePath: "/v1/" + merchantId + "/payments/" + paymentId + "/capture",
+        modulePath: `/v1/${merchantId}/payments/${paymentId}/capture`,
         body: postData,
         paymentContext: paymentContext
       },

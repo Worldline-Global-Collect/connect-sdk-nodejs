@@ -13,7 +13,7 @@ export function block(
     return json(
       {
         method: "POST",
-        modulePath: "/v1/" + merchantId + "/mandates/" + uniqueMandateReference + "/block",
+        modulePath: `/v1/${merchantId}/mandates/${uniqueMandateReference}/block`,
         body: null,
         paymentContext: paymentContext
       },

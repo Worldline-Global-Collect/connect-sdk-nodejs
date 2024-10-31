@@ -13,7 +13,7 @@ export function cancel(
     return json(
       {
         method: "POST",
-        modulePath: "/v1/" + merchantId + "/payments/" + paymentId + "/cancel",
+        modulePath: `/v1/${merchantId}/payments/${paymentId}/cancel`,
         body: null,
         paymentContext: paymentContext
       },

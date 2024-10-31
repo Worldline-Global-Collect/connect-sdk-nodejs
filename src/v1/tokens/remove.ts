@@ -12,7 +12,7 @@ export function remove(sdkContext: SdkContext): (merchantId: string, tokenId: st
     return json(
       {
         method: "DELETE",
-        modulePath: "/v1/" + merchantId + "/tokens/" + tokenId,
+        modulePath: `/v1/${merchantId}/tokens/${tokenId}`,
         body: null,
         paymentContext: paymentContext
       },

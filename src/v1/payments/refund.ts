@@ -26,7 +26,7 @@ export function refund(
     return json(
       {
         method: "POST",
-        modulePath: "/v1/" + merchantId + "/payments/" + paymentId + "/refund",
+        modulePath: `/v1/${merchantId}/payments/${paymentId}/refund`,
         body: postData,
         paymentContext: paymentContext
       },

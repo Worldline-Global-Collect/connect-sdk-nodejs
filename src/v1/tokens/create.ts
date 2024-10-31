@@ -26,7 +26,7 @@ export function create(
     return json(
       {
         method: "POST",
-        modulePath: "/v1/" + merchantId + "/tokens",
+        modulePath: `/v1/${merchantId}/tokens`,
         body: postData,
         paymentContext: paymentContext
       },

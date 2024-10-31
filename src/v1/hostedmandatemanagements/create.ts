@@ -30,7 +30,7 @@ export function create(
     return json(
       {
         method: "POST",
-        modulePath: "/v1/" + merchantId + "/hostedmandatemanagements",
+        modulePath: `/v1/${merchantId}/hostedmandatemanagements`,
         body: postData,
         paymentContext: paymentContext
       },

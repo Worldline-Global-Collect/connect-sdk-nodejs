@@ -26,7 +26,7 @@ export function tokenize(
     return json(
       {
         method: "POST",
-        modulePath: "/v1/" + merchantId + "/payments/" + paymentId + "/tokenize",
+        modulePath: `/v1/${merchantId}/payments/${paymentId}/tokenize`,
         body: postData,
         paymentContext: paymentContext
       },

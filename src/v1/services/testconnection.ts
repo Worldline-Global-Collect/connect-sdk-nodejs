@@ -11,7 +11,7 @@ export function testconnection(sdkContext: SdkContext): (merchantId: string, pay
     return json(
       {
         method: "GET",
-        modulePath: "/v1/" + merchantId + "/services/testconnection",
+        modulePath: `/v1/${merchantId}/services/testconnection`,
         body: null,
         paymentContext: paymentContext
       },

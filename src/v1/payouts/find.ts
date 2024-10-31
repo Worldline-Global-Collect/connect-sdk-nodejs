@@ -12,7 +12,7 @@ export function find(sdkContext: SdkContext): (merchantId: string, paymentContex
     return json(
       {
         method: "GET",
-        modulePath: "/v1/" + merchantId + "/payouts",
+        modulePath: `/v1/${merchantId}/payouts`,
         body: null,
         paymentContext: paymentContext
       },

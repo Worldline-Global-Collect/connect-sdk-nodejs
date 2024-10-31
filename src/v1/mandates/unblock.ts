@@ -13,7 +13,7 @@ export function unblock(
     return json(
       {
         method: "POST",
-        modulePath: "/v1/" + merchantId + "/mandates/" + uniqueMandateReference + "/unblock",
+        modulePath: `/v1/${merchantId}/mandates/${uniqueMandateReference}/unblock`,
         body: null,
         paymentContext: paymentContext
       },

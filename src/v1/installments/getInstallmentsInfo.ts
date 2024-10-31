@@ -26,7 +26,7 @@ export function getInstallmentsInfo(
     return json(
       {
         method: "POST",
-        modulePath: "/v1/" + merchantId + "/installments/getInstallmentsInfo",
+        modulePath: `/v1/${merchantId}/installments/getInstallmentsInfo`,
         body: postData,
         paymentContext: paymentContext
       },

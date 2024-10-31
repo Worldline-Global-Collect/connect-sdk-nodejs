@@ -31,7 +31,7 @@ export function sessions(
     return json(
       {
         method: "POST",
-        modulePath: "/v1/" + merchantId + "/products/" + paymentProductId + "/sessions",
+        modulePath: `/v1/${merchantId}/products/${paymentProductId}/sessions`,
         body: postData,
         paymentContext: paymentContext
       },

@@ -13,7 +13,7 @@ export function refunds(
     return json(
       {
         method: "GET",
-        modulePath: "/v1/" + merchantId + "/payments/" + paymentId + "/refunds",
+        modulePath: `/v1/${merchantId}/payments/${paymentId}/refunds`,
         body: null,
         paymentContext: paymentContext
       },

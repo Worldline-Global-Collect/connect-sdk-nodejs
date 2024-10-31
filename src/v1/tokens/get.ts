@@ -11,7 +11,7 @@ export function get(sdkContext: SdkContext): (merchantId: string, tokenId: strin
     return json(
       {
         method: "GET",
-        modulePath: "/v1/" + merchantId + "/tokens/" + tokenId,
+        modulePath: `/v1/${merchantId}/tokens/${tokenId}`,
         body: null,
         paymentContext: paymentContext
       },

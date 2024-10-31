@@ -678,6 +678,9 @@
     "CompanyInformation" : {
       "type" : "object",
       "properties" : {
+        "dateOfIncorporation" : {
+          "type" : "string"
+        },
         "name" : {
           "type" : "string"
         },
@@ -1740,6 +1743,9 @@
         "fundingType" : {
           "type" : "string"
         },
+        "paymentCode" : {
+          "type" : "string"
+        },
         "purchaseType" : {
           "type" : "string"
         },
@@ -1821,7 +1827,7 @@
       "properties" : {
         "expirationPeriod" : {
           "type" : "integer",
-          "maximum" : 60
+          "maximum" : 2147483647
         },
         "isRecurring" : {
           "type" : "boolean"
@@ -1831,9 +1837,6 @@
         },
         "paymentProduct809SpecificInput" : {
           "$ref" : "#/definitions/RedirectPaymentProduct809SpecificInput"
-        },
-        "paymentProduct816SpecificInput" : {
-          "$ref" : "#/definitions/RedirectPaymentProduct816SpecificInput"
         },
         "paymentProduct840SpecificInput" : {
           "$ref" : "#/definitions/RedirectPaymentProduct840SpecificInput"
@@ -1898,15 +1901,6 @@
         },
         "issuerId" : {
           "type" : "string"
-        }
-      },
-      "additionalProperties" : false
-    },
-    "RedirectPaymentProduct816SpecificInput" : {
-      "type" : "object",
-      "properties" : {
-        "bankAccountIban" : {
-          "$ref" : "#/definitions/BankAccountIban"
         }
       },
       "additionalProperties" : false

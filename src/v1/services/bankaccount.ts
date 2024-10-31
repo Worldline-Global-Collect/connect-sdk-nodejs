@@ -26,7 +26,7 @@ export function bankaccount(
     return json(
       {
         method: "POST",
-        modulePath: "/v1/" + merchantId + "/services/convert/bankaccount",
+        modulePath: `/v1/${merchantId}/services/convert/bankaccount`,
         body: postData,
         paymentContext: paymentContext
       },

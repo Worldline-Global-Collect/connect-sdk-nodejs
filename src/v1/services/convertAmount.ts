@@ -12,7 +12,7 @@ export function convertAmount(sdkContext: SdkContext): (merchantId: string, paym
     return json(
       {
         method: "GET",
-        modulePath: "/v1/" + merchantId + "/services/convert/amount",
+        modulePath: `/v1/${merchantId}/services/convert/amount`,
         body: null,
         paymentContext: paymentContext
       },

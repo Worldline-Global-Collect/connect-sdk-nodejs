@@ -13,7 +13,7 @@ export function devicefingerprint(
     return json(
       {
         method: "GET",
-        modulePath: "/v1/" + merchantId + "/payments/" + paymentId + "/devicefingerprint",
+        modulePath: `/v1/${merchantId}/payments/${paymentId}/devicefingerprint`,
         body: null,
         paymentContext: paymentContext
       },

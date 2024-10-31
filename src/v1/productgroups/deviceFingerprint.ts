@@ -31,7 +31,7 @@ export function deviceFingerprint(
     return json(
       {
         method: "POST",
-        modulePath: "/v1/" + merchantId + "/productgroups/" + paymentProductGroupId + "/deviceFingerprint",
+        modulePath: `/v1/${merchantId}/productgroups/${paymentProductGroupId}/deviceFingerprint`,
         body: postData,
         paymentContext: paymentContext
       },

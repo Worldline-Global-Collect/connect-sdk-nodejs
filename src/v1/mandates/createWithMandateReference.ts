@@ -31,7 +31,7 @@ export function createWithMandateReference(
     return json(
       {
         method: "PUT",
-        modulePath: "/v1/" + merchantId + "/mandates/" + uniqueMandateReference,
+        modulePath: `/v1/${merchantId}/mandates/${uniqueMandateReference}`,
         body: postData,
         paymentContext: paymentContext
       },

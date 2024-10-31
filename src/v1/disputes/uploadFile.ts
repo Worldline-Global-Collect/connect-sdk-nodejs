@@ -14,7 +14,7 @@ export function uploadFile(
     return multipart(
       {
         method: "POST",
-        modulePath: "/files/v1/" + merchantId + "/disputes/" + disputeId,
+        modulePath: `/files/v1/${merchantId}/disputes/${disputeId}`,
         body: postData,
         paymentContext: paymentContext
       },

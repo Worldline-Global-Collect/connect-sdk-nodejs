@@ -13,7 +13,7 @@ export function get(
     return json(
       {
         method: "GET",
-        modulePath: "/v1/" + merchantId + "/mandates/" + uniqueMandateReference,
+        modulePath: `/v1/${merchantId}/mandates/${uniqueMandateReference}`,
         body: null,
         paymentContext: paymentContext
       },

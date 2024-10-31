@@ -13,7 +13,7 @@ export function revoke(
     return json(
       {
         method: "POST",
-        modulePath: "/v1/" + merchantId + "/mandates/" + uniqueMandateReference + "/revoke",
+        modulePath: `/v1/${merchantId}/mandates/${uniqueMandateReference}/revoke`,
         body: null,
         paymentContext: paymentContext
       },

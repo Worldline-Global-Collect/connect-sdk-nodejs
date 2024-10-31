@@ -14,7 +14,7 @@ export function directory(
     return json(
       {
         method: "GET",
-        modulePath: "/v1/" + merchantId + "/products/" + paymentProductId + "/directory",
+        modulePath: `/v1/${merchantId}/products/${paymentProductId}/directory`,
         body: null,
         paymentContext: paymentContext
       },

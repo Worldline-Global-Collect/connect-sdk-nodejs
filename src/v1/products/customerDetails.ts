@@ -31,7 +31,7 @@ export function customerDetails(
     return json(
       {
         method: "POST",
-        modulePath: "/v1/" + merchantId + "/products/" + paymentProductId + "/customerDetails",
+        modulePath: `/v1/${merchantId}/products/${paymentProductId}/customerDetails`,
         body: postData,
         paymentContext: paymentContext
       },

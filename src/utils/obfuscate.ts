@@ -1,4 +1,3 @@
-import * as traverse from "traverse";
 import * as _ from "lodash";
 import { ObfuscationRule, SdkContext } from "../model";
 
@@ -58,17 +57,28 @@ function obfuscationRuleKey(name: string, toLowerCase: boolean): string {
   return toLowerCase ? name.toLowerCase() : name;
 }
 
+function applyObfuscationRule(value: unknown, obfuscationRule?: ObfuscationRule): unknown {
+  return obfuscationRule ? obfuscationRule("" + value) : value;
+}
+
 function applyObfuscationRules(json: unknown, obfuscationRules: ObfuscationRules, toLowerCase: boolean): unknown {
-  traverse(json).forEach(function(node) {
-    if (this.key && typeof node !== "object") {
-      const obfuscationRule = obfuscationRules[obfuscationRuleKey(this.key, toLowerCase)];
-      if (obfuscationRule) {
-        const value = "" + node; // make sure it's a string
-        this.update(obfuscationRule(value));
-      }
-    }
+  if (json === null || typeof json !== "object") {
+    return json;
+  }
+  if (Array.isArray(json)) {
+    return json.map(value => applyObfuscationRules(value, obfuscationRules, toLowerCase));
+  }
+  // Cannot use Object.fromEntries with the current compiler target
+  // Therefore don't map to entries but directly add to this new object
+  const result = {};
+  Object.entries(json).forEach(([key, value]) => {
+    const newValue =
+      value !== null && typeof value === "object"
+        ? applyObfuscationRules(value, obfuscationRules, toLowerCase)
+        : applyObfuscationRule(value, obfuscationRules[obfuscationRuleKey(key, toLowerCase)]);
+    result[key] = newValue;
   });
-  return json;
+  return result;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -121,8 +131,7 @@ export function getObfuscated(input: any, context: SdkContext, caseInsensitive =
     obfuscationRules[obfuscationRuleKey(key, caseInsensitive)] = customObfuscationRules[key];
   }
 
-  let obfuscated = JSON.parse(JSON.stringify(input));
-  obfuscated = applyObfuscationRules(obfuscated, obfuscationRules, caseInsensitive);
+  const obfuscated = applyObfuscationRules(input, obfuscationRules, caseInsensitive);
 
   return JSON.stringify(obfuscated, null, INDENT);
 }

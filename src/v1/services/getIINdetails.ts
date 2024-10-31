@@ -26,7 +26,7 @@ export function getIINdetails(
     return json(
       {
         method: "POST",
-        modulePath: "/v1/" + merchantId + "/services/getIINdetails",
+        modulePath: `/v1/${merchantId}/services/getIINdetails`,
         body: postData,
         paymentContext: paymentContext
       },

@@ -111,6 +111,9 @@
     "CompanyInformation" : {
       "type" : "object",
       "properties" : {
+        "dateOfIncorporation" : {
+          "type" : "string"
+        },
         "name" : {
           "type" : "string"
         },

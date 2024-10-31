@@ -13,7 +13,7 @@ export function cancelapproval(
     return json(
       {
         method: "POST",
-        modulePath: "/v1/" + merchantId + "/payments/" + paymentId + "/cancelapproval",
+        modulePath: `/v1/${merchantId}/payments/${paymentId}/cancelapproval`,
         body: null,
         paymentContext: paymentContext
       },

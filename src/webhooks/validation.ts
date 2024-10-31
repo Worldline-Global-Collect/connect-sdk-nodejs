@@ -11,12 +11,12 @@ function getHeaderValue(requestHeaders: RequestHeaders, headerName: string): str
         return value;
       }
       if (typeof value === "undefined") {
-        throw new Error("could not find header '" + headerName + "'");
+        throw new Error(`could not find header '${headerName}'`);
       }
-      throw new Error("found multiple values for header '" + headerName + "'");
+      throw new Error(`found multiple values for header '${headerName}'`);
     }
   }
-  throw new Error("could not find header '" + headerName + "'");
+  throw new Error(`could not find header '${headerName}'`);
 }
 
 async function validate(body: string | Buffer, requestHeaders: RequestHeaders, secretKeyStore: SecretKeyStore): Promise<void> {
@@ -29,7 +29,7 @@ async function validate(body: string | Buffer, requestHeaders: RequestHeaders, s
     .update(body)
     .digest("base64");
   if (!compare(signature, expectedSignature)) {
-    throw new Error("failed to validate signature '" + signature + "'");
+    throw new Error(`failed to validate signature '${signature}'`);
   }
 }
 

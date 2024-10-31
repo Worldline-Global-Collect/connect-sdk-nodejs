@@ -26,7 +26,7 @@ export function update(
     return json(
       {
         method: "PUT",
-        modulePath: "/v1/" + merchantId + "/tokens/" + tokenId,
+        modulePath: `/v1/${merchantId}/tokens/${tokenId}`,
         body: postData,
         paymentContext: paymentContext
       },

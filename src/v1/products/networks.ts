@@ -14,7 +14,7 @@ export function networks(
     return json(
       {
         method: "GET",
-        modulePath: "/v1/" + merchantId + "/products/" + paymentProductId + "/networks",
+        modulePath: `/v1/${merchantId}/products/${paymentProductId}/networks`,
         body: null,
         paymentContext: paymentContext
       },

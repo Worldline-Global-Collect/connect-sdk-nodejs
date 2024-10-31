@@ -26,7 +26,7 @@ export function dispute(
     return json(
       {
         method: "POST",
-        modulePath: "/v1/" + merchantId + "/payments/" + paymentId + "/dispute",
+        modulePath: `/v1/${merchantId}/payments/${paymentId}/dispute`,
         body: postData,
         paymentContext: paymentContext
       },

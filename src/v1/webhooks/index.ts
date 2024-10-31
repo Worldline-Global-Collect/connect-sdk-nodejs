@@ -11,7 +11,7 @@ import { V1WebhooksFactory, WebhooksHelper } from "../model/webhooks";
 
 function validateApiVersion(event: WebhooksEvent): void {
   if ("v1" !== event.apiVersion) {
-    throw new ApiVersionMismatchError("event API version " + event.apiVersion + " is not compatible with SDK API version v1", event.apiVersion!, "v1");
+    throw new ApiVersionMismatchError(`event API version ${event.apiVersion} is not compatible with SDK API version v1`, event.apiVersion!, "v1");
   }
 }
 

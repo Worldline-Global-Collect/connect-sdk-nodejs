@@ -26,7 +26,7 @@ export function approve(
     return json(
       {
         method: "POST",
-        modulePath: "/v1/" + merchantId + "/refunds/" + refundId + "/approve",
+        modulePath: `/v1/${merchantId}/refunds/${refundId}/approve`,
         body: postData,
         paymentContext: paymentContext
       },

@@ -13,7 +13,7 @@ export function disputes(
     return json(
       {
         method: "GET",
-        modulePath: "/v1/" + merchantId + "/payments/" + paymentId + "/disputes",
+        modulePath: `/v1/${merchantId}/payments/${paymentId}/disputes`,
         body: null,
         paymentContext: paymentContext
       },

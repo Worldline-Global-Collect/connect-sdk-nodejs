@@ -519,6 +519,9 @@
     "CompanyInformation" : {
       "type" : "object",
       "properties" : {
+        "dateOfIncorporation" : {
+          "type" : "string"
+        },
         "name" : {
           "type" : "string"
         },
@@ -1472,6 +1475,9 @@
         "fundingType" : {
           "type" : "string"
         },
+        "paymentCode" : {
+          "type" : "string"
+        },
         "purchaseType" : {
           "type" : "string"
         },
@@ -1603,7 +1609,7 @@
       "properties" : {
         "expirationPeriod" : {
           "type" : "integer",
-          "maximum" : 60
+          "maximum" : 2147483647
         },
         "paymentProduct4101SpecificInput" : {
           "$ref" : "#/definitions/RedirectPaymentProduct4101SpecificInputBase"

@@ -26,7 +26,7 @@ function handleResponse(res: http.IncomingMessage, context: SdkContext, logger: 
         // headers: case insensitive, body: case sensitive
         const obfuscatedHeaders = obfuscate.getObfuscated(res.headers, context, true);
         const obfuscatedBody = headers.isJSON(res.headers["content-type"]) ? obfuscate.getObfuscated(body, context, false) : body;
-        logger("info", "Response from Message ID: " + uuidString + ", status: " + res.statusCode + ", headers: " + obfuscatedHeaders + ", body: " + obfuscatedBody);
+        logger("info", `Response from Message ID: ${uuidString}, status: ${res.statusCode}, headers: ${obfuscatedHeaders}, body: ${obfuscatedBody}`);
       }
     });
   }
@@ -49,7 +49,7 @@ export function sendJSON(options: https.RequestOptions, postData: object | undef
     // headers: case insensitive, body: case sensitive
     const obfuscatedHeaders = obfuscate.getObfuscated(options.headers, context, true);
     const obfuscatedBody = obfuscate.getObfuscated(postData, context, false);
-    logger("info", "Request with Message ID: " + uuidString + ", " + options.method + " to " + options.path + ", headers: " + obfuscatedHeaders + ", body: " + obfuscatedBody);
+    logger("info", `Request with Message ID: ${uuidString}, ${options.method} to ${options.path}, headers: ${obfuscatedHeaders}, body: ${obfuscatedBody}`);
   }
   const h = options.protocol === "https:" ? https : http;
   const req = h.request(options, res => {
@@ -73,7 +73,7 @@ export function sendMultipart(options: https.RequestOptions, postData: Multipart
   if (context.isLoggingEnabled()) {
     // headers: case insensitive
     const obfuscatedHeaders = obfuscate.getObfuscated(options.headers, context, true);
-    logger("info", "Request with Message ID: " + uuidString + ", " + options.method + " to " + options.path + ", headers: " + obfuscatedHeaders + ", body: <binary data>");
+    logger("info", `Request with Message ID: ${uuidString}, ${options.method} to ${options.path}, headers: ${obfuscatedHeaders}, body: <binary data>`);
   }
   const h = options.protocol === "https:" ? https : http;
   const req = h.request(options, res => {

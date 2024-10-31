@@ -26,7 +26,7 @@ export function cards(
     return json(
       {
         method: "POST",
-        modulePath: "/v1/" + merchantId + "/riskassessments/cards",
+        modulePath: `/v1/${merchantId}/riskassessments/cards`,
         body: postData,
         paymentContext: paymentContext
       },

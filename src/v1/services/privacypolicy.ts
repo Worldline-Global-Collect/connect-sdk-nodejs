@@ -12,7 +12,7 @@ export function privacypolicy(sdkContext: SdkContext): (merchantId: string, paym
     return json(
       {
         method: "GET",
-        modulePath: "/v1/" + merchantId + "/services/privacypolicy",
+        modulePath: `/v1/${merchantId}/services/privacypolicy`,
         body: null,
         paymentContext: paymentContext
       },

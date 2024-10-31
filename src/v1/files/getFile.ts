@@ -11,7 +11,7 @@ export function getFile(sdkContext: SdkContext): (merchantId: string, fileId: st
     return json(
       {
         method: "GET",
-        modulePath: "/files/v1/" + merchantId + "/files/" + fileId,
+        modulePath: `/files/v1/${merchantId}/files/${fileId}`,
         body: null,
         paymentContext: paymentContext,
         expectBinaryResponse: true

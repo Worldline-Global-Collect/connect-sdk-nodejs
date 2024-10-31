@@ -17,7 +17,7 @@ export const inMemorySecretKeyStore: InMemorySecretKeyStore = {
     if (secretKey) {
       return Promise.resolve(secretKey);
     } else {
-      return Promise.reject(new SecretKeyNotAvailableError("could not find secret key for key id " + keyId, keyId));
+      return Promise.reject(new SecretKeyNotAvailableError(`could not find secret key for key id ${keyId}`, keyId));
     }
   },
   storeSecretKey(keyId, secretKey): void {

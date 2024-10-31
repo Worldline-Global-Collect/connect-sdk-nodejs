@@ -13,7 +13,7 @@ export function thirdPartyStatus(
     return json(
       {
         method: "GET",
-        modulePath: "/v1/" + merchantId + "/payments/" + paymentId + "/thirdpartystatus",
+        modulePath: `/v1/${merchantId}/payments/${paymentId}/thirdpartystatus`,
         body: null,
         paymentContext: paymentContext
       },

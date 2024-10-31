@@ -13,7 +13,7 @@ export function submit(
     return json(
       {
         method: "POST",
-        modulePath: "/v1/" + merchantId + "/disputes/" + disputeId + "/submit",
+        modulePath: `/v1/${merchantId}/disputes/${disputeId}/submit`,
         body: null,
         paymentContext: paymentContext
       },

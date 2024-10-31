@@ -26,7 +26,7 @@ export function bankaccounts(
     return json(
       {
         method: "POST",
-        modulePath: "/v1/" + merchantId + "/riskassessments/bankaccounts",
+        modulePath: `/v1/${merchantId}/riskassessments/bankaccounts`,
         body: postData,
         paymentContext: paymentContext
       },

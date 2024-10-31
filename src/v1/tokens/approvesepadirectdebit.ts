@@ -26,7 +26,7 @@ export function approvesepadirectdebit(
     return json(
       {
         method: "POST",
-        modulePath: "/v1/" + merchantId + "/tokens/" + tokenId + "/approvesepadirectdebit",
+        modulePath: `/v1/${merchantId}/tokens/${tokenId}/approvesepadirectdebit`,
         body: postData,
         paymentContext: paymentContext
       },

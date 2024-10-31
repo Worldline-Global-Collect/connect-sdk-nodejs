@@ -31,7 +31,7 @@ export function complete(
     return json(
       {
         method: "POST",
-        modulePath: "/v1/" + merchantId + "/payments/" + paymentId + "/complete",
+        modulePath: `/v1/${merchantId}/payments/${paymentId}/complete`,
         body: postData,
         paymentContext: paymentContext
       },

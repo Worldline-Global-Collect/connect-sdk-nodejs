@@ -8,7 +8,7 @@ function compareHeaders(a: Header, b: Header): number {
   const keyB = b.key.toUpperCase();
   if (keyA < keyB) {
     return -1;
-  } else if (keyB > keyB) {
+  } else if (keyA > keyB) {
     return 1;
   } else {
     return 0;
@@ -23,7 +23,7 @@ export function getV1HMACSignature(method: string, contentType: string, date: st
     .join("");
   return crypto
     .createHmac("SHA256", secretApiKey)
-    .update(method + "\n" + contentType + "\n" + date + "\n" + sortedHeaders + path + "\n")
+    .update(`${method}\n${contentType}\n${date}\n${sortedHeaders}${path}\n`)
     .digest("base64");
 }
 
