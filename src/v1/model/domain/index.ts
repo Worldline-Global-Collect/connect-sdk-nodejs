@@ -885,6 +885,13 @@ export interface CustomerTokenWithContactDetails extends CustomerToken {
   contactDetails?: ContactDetailsToken | null;
 }
 
+export interface CybersourceDecisionManager {
+  clauseName?: string | null;
+  fraudScore?: number | null;
+  policyApplied?: string | null;
+  reasonCodes?: string[] | null;
+}
+
 export interface Debtor {
   additionalAddressInfo?: string | null;
   city?: string | null;
@@ -1155,6 +1162,7 @@ export interface FraudFieldsShippingDetails {
 }
 
 export interface FraudResults {
+  cybersourceDecisionManager?: CybersourceDecisionManager | null;
   fraudServiceResult?: string | null;
   inAuth?: InAuth | null;
   microsoftFraudProtection?: MicrosoftFraudResults | null;
@@ -1559,6 +1567,7 @@ export interface MicrosoftFraudResults {
   deviceId?: string | null;
   fraudScore?: number | null;
   policyApplied?: string | null;
+  reasonCodes?: string[] | null;
   trueIpAddress?: string | null;
   userDeviceType?: string | null;
 }
