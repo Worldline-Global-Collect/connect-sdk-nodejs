@@ -489,7 +489,9 @@ export interface CardPaymentMethodSpecificOutput extends AbstractPaymentMethodSp
   card?: CardEssentials | null;
   fraudResults?: CardFraudResults | null;
   initialSchemeTransactionId?: string | null;
+  networkTokenData?: NetworkTokenData | null;
   networkTokenUsed?: boolean | null;
+  paymentAccountReference?: string | null;
   schemeTransactionId?: string | null;
   threeDSecureResults?: ThreeDSecureResults | null;
   token?: string | null;
@@ -1634,6 +1636,12 @@ export interface MobileThreeDSecureChallengeParameters {
   acsSignedContent?: string | null;
   acsTransactionId?: string | null;
   threeDServerTransactionId?: string | null;
+}
+
+export interface NetworkTokenData {
+  networkToken?: string | null;
+  tokenExpiryDate?: string | null;
+  tokenReferenceId?: string | null;
 }
 
 export interface NonSepaDirectDebitPaymentMethodSpecificInput extends AbstractPaymentMethodSpecificInput {
