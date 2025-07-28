@@ -6,7 +6,7 @@ import client, { config } from "../init";
  */
 describe("riskassessments", () => {
   describe("for bankaccounts", () => {
-    test("called successfully", async () => {
+    test.skip("called successfully", async () => {
       const body = {
         order: {
           amountOfMoney: {

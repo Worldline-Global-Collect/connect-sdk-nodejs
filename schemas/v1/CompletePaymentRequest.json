@@ -972,6 +972,9 @@
         "productCode" : {
           "type" : "string"
         },
+        "productImageUrl" : {
+          "type" : "string"
+        },
         "productName" : {
           "type" : "string"
         },
@@ -983,6 +986,9 @@
           "type" : "string"
         },
         "productType" : {
+          "type" : "string"
+        },
+        "productUrl" : {
           "type" : "string"
         },
         "quantity" : {
@@ -1160,6 +1166,9 @@
         "addressIndicator" : {
           "type" : "string"
         },
+        "carrier" : {
+          "type" : "string"
+        },
         "comments" : {
           "type" : "string"
         },
@@ -1167,6 +1176,9 @@
           "type" : "string"
         },
         "firstUsageDate" : {
+          "type" : "string"
+        },
+        "instructions" : {
           "type" : "string"
         },
         "isFirstUsage" : {

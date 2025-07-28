@@ -1685,6 +1685,9 @@
         "productCode" : {
           "type" : "string"
         },
+        "productImageUrl" : {
+          "type" : "string"
+        },
         "productName" : {
           "type" : "string"
         },
@@ -1696,6 +1699,9 @@
           "type" : "string"
         },
         "productType" : {
+          "type" : "string"
+        },
+        "productUrl" : {
           "type" : "string"
         },
         "quantity" : {
@@ -1838,6 +1844,9 @@
         "paymentProduct809SpecificInput" : {
           "$ref" : "#/definitions/RedirectPaymentProduct809SpecificInput"
         },
+        "paymentProduct838SpecificInput" : {
+          "$ref" : "#/definitions/RedirectPaymentProduct838SpecificInput"
+        },
         "paymentProduct840SpecificInput" : {
           "$ref" : "#/definitions/RedirectPaymentProduct840SpecificInput"
         },
@@ -1900,6 +1909,18 @@
           "type" : "string"
         },
         "issuerId" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "RedirectPaymentProduct838SpecificInput" : {
+      "type" : "object",
+      "properties" : {
+        "interoperabilityData" : {
+          "type" : "string"
+        },
+        "interoperabilityToken" : {
           "type" : "string"
         }
       },
@@ -2125,6 +2146,9 @@
         "addressIndicator" : {
           "type" : "string"
         },
+        "carrier" : {
+          "type" : "string"
+        },
         "comments" : {
           "type" : "string"
         },
@@ -2132,6 +2156,9 @@
           "type" : "string"
         },
         "firstUsageDate" : {
+          "type" : "string"
+        },
+        "instructions" : {
           "type" : "string"
         },
         "isFirstUsage" : {

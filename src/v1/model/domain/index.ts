@@ -82,6 +82,11 @@ export interface AbstractRedirectPaymentMethodSpecificInput extends AbstractPaym
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface AbstractRedirectPaymentProduct4101SpecificInput {}
 
+export interface AbstractRedirectPaymentProduct838SpecificInput {
+  interoperabilityData?: string | null;
+  interoperabilityToken?: string | null;
+}
+
 export interface AbstractRedirectPaymentProduct840SpecificInput {
   addressSelectionAtPayPal?: boolean | null;
 }
@@ -418,28 +423,41 @@ export interface CaptureOutput extends OrderOutput {
   bankTransferPaymentMethodSpecificOutput?: BankTransferPaymentMethodSpecificOutput | null;
   cardPaymentMethodSpecificOutput?: CardPaymentMethodSpecificOutput | null;
   cashPaymentMethodSpecificOutput?: CashPaymentMethodSpecificOutput | null;
-  directDebitPaymentMethodSpecificOutput?: NonSepaDirectDebitPaymentMethodSpecificOutput | null;
-  eInvoicePaymentMethodSpecificOutput?: EInvoicePaymentMethodSpecificOutput | null;
-  invoicePaymentMethodSpecificOutput?: InvoicePaymentMethodSpecificOutput | null;
-  mobilePaymentMethodSpecificOutput?: MobilePaymentMethodSpecificOutput | null;
   paymentMethod?: string | null;
   redirectPaymentMethodSpecificOutput?: RedirectPaymentMethodSpecificOutput | null;
   reversalReason?: string | null;
   sepaDirectDebitPaymentMethodSpecificOutput?: SepaDirectDebitPaymentMethodSpecificOutput | null;
 }
 
+export interface CapturePaymentOrder {
+  additionalInput?: CapturePaymentOrderAdditionalInput | null;
+  references?: CapturePaymentOrderReferences | null;
+}
+
+export interface CapturePaymentOrderAdditionalInput {
+  airlineData?: AirlineData | null;
+  lodgingData?: LodgingData | null;
+}
+
+export interface CapturePaymentOrderReferences {
+  merchantCaptureReference?: string | null;
+}
+
 export interface CapturePaymentRequest {
   amount?: number | null;
   isFinal?: boolean | null;
+  order?: CapturePaymentOrder | null;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface CaptureResponse extends Capture {}
 
 export interface CaptureStatusOutput {
+  isRefundable?: boolean | null;
   isRetriable?: boolean | null;
   providerRawOutput?: KeyValuePair[] | null;
   statusCode?: number | null;
+  statusCodeChangeDateTime?: string | null;
 }
 
 export interface CapturesResponse {
@@ -1707,10 +1725,12 @@ export interface OrderLineDetails {
   naicsCommodityCode?: string | null;
   productCategory?: string | null;
   productCode?: string | null;
+  productImageUrl?: string | null;
   productName?: string | null;
   productPrice?: number | null;
   productSku?: string | null;
   productType?: string | null;
+  productUrl?: string | null;
   quantity?: number | null;
   taxAmount?: number | null;
   unit?: string | null;
@@ -2017,6 +2037,7 @@ export interface PaymentProducts {
 }
 
 export interface PaymentReferences {
+  merchantCaptureReference?: string | null;
   merchantOrderId?: number | null;
   merchantReference?: string | null;
   paymentReference?: string | null;
@@ -2144,6 +2165,7 @@ export interface RedirectPaymentMethodSpecificInput extends AbstractRedirectPaym
   isRecurring?: boolean | null;
   paymentProduct4101SpecificInput?: RedirectPaymentProduct4101SpecificInput | null;
   paymentProduct809SpecificInput?: RedirectPaymentProduct809SpecificInput | null;
+  paymentProduct838SpecificInput?: RedirectPaymentProduct838SpecificInput | null;
   paymentProduct840SpecificInput?: RedirectPaymentProduct840SpecificInput | null;
   paymentProduct861SpecificInput?: RedirectPaymentProduct861SpecificInput | null;
   paymentProduct863SpecificInput?: RedirectPaymentProduct863SpecificInput | null;
@@ -2158,6 +2180,7 @@ export interface RedirectPaymentMethodSpecificInput extends AbstractRedirectPaym
 
 export interface RedirectPaymentMethodSpecificInputBase extends AbstractRedirectPaymentMethodSpecificInput {
   paymentProduct4101SpecificInput?: RedirectPaymentProduct4101SpecificInputBase | null;
+  paymentProduct838SpecificInput?: RedirectPaymentProduct838SpecificInputBase | null;
   paymentProduct840SpecificInput?: RedirectPaymentProduct840SpecificInputBase | null;
 }
 
@@ -2190,6 +2213,12 @@ export interface RedirectPaymentProduct809SpecificInput {
   expirationPeriod?: string | null;
   issuerId?: string | null;
 }
+
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+export interface RedirectPaymentProduct838SpecificInput extends AbstractRedirectPaymentProduct838SpecificInput {}
+
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+export interface RedirectPaymentProduct838SpecificInputBase extends AbstractRedirectPaymentProduct838SpecificInput {}
 
 export interface RedirectPaymentProduct840SpecificInput extends AbstractRedirectPaymentProduct840SpecificInput {
   /**
@@ -2435,9 +2464,11 @@ export interface SessionResponse {
 export interface Shipping {
   address?: AddressPersonal | null;
   addressIndicator?: string | null;
+  carrier?: string | null;
   comments?: string | null;
   emailAddress?: string | null;
   firstUsageDate?: string | null;
+  instructions?: string | null;
   isFirstUsage?: boolean | null;
   shippedFromZip?: string | null;
   trackingNumber?: string | null;
