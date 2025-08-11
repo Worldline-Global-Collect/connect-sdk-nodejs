@@ -1930,6 +1930,10 @@ export interface PaymentProduct863ThirdPartyData {
   timeStamp?: string | null;
 }
 
+export interface PaymentProduct866SpecificOutput {
+  walletUsed?: string | null;
+}
+
 export interface PaymentProductDisplayHints {
   displayOrder?: number | null;
   label?: string | null;
@@ -2193,6 +2197,7 @@ export interface RedirectPaymentMethodSpecificOutput extends AbstractPaymentMeth
   paymentProduct806SpecificOutput?: PaymentProduct806SpecificOutput | null;
   paymentProduct836SpecificOutput?: PaymentProduct836SpecificOutput | null;
   paymentProduct840SpecificOutput?: PaymentProduct840SpecificOutput | null;
+  paymentProduct866SpecificOutput?: PaymentProduct866SpecificOutput | null;
   token?: string | null;
 }
 
