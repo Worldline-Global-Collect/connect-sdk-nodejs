@@ -44,7 +44,7 @@ export interface PaymentsClient {
   /**
    * Resource /{merchantId}/payments/{paymentId} - <a href="https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/nodejs/payments/get.html">Get payment</a>
    */
-  get(merchantId: string, paymentId: string, paymentContext?: PaymentContext | null): Promise<SdkResponse<PaymentResponse, ErrorResponse>>;
+  get(merchantId: string, paymentId: string, paymentContext: GetPaymentParams): Promise<SdkResponse<PaymentResponse, ErrorResponse>>;
   /**
    * Resource /{merchantId}/payments/{paymentId}/complete - <a href="https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/nodejs/payments/complete.html">Complete payment</a>
    */
@@ -124,4 +124,8 @@ export interface FindPaymentsParams extends PaymentContext {
   merchantOrderId?: number;
   offset?: number;
   limit?: number;
+}
+
+export interface GetPaymentParams extends PaymentContext {
+  returnOperations?: boolean;
 }

@@ -4,12 +4,16 @@
  */
 import { get } from "./get";
 import { refund } from "./refund";
+import { disputes } from "./disputes";
+import { dispute } from "./dispute";
 import { SdkContext } from "../../model";
 import { CapturesClient } from "../model/captures";
 
 export function newCapturesClient(sdkContext: SdkContext): CapturesClient {
   return {
     get: get(sdkContext),
-    refund: refund(sdkContext)
+    refund: refund(sdkContext),
+    disputes: disputes(sdkContext),
+    dispute: dispute(sdkContext)
   };
 }

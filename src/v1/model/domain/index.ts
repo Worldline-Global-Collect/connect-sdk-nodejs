@@ -981,6 +981,7 @@ export interface DisplayedData {
 }
 
 export interface Dispute {
+  captureId?: string | null;
   disputeOutput?: DisputeOutput | null;
   id?: string | null;
   paymentId?: string | null;
@@ -1826,8 +1827,20 @@ export interface PaymentErrorResponse {
   paymentResult?: CreatePaymentResult | null;
 }
 
+export interface PaymentOperation {
+  amountOfMoney?: AmountOfMoney | null;
+  id?: string | null;
+  status?: string | null;
+  timestamp?: string | null;
+  type?: string | null;
+}
+
 export interface PaymentOutput extends OrderOutput {
+  amountCaptureRequested?: number | null;
+  amountCaptured?: number | null;
   amountPaid?: number | null;
+  amountRefundRequested?: number | null;
+  amountRefunded?: number | null;
   amountReversed?: number | null;
   bankTransferPaymentMethodSpecificOutput?: BankTransferPaymentMethodSpecificOutput | null;
   cardPaymentMethodSpecificOutput?: CardPaymentMethodSpecificOutput | null;
@@ -1836,6 +1849,7 @@ export interface PaymentOutput extends OrderOutput {
   eInvoicePaymentMethodSpecificOutput?: EInvoicePaymentMethodSpecificOutput | null;
   invoicePaymentMethodSpecificOutput?: InvoicePaymentMethodSpecificOutput | null;
   mobilePaymentMethodSpecificOutput?: MobilePaymentMethodSpecificOutput | null;
+  operations?: PaymentOperation[] | null;
   paymentMethod?: string | null;
   redirectPaymentMethodSpecificOutput?: RedirectPaymentMethodSpecificOutput | null;
   reversalReason?: string | null;
@@ -2666,6 +2680,7 @@ export interface ValueMappingElement {
 
 export interface WebhooksEvent {
   apiVersion?: string | null;
+  capture?: CaptureResponse | null;
   created?: string | null;
   dispute?: DisputeResponse | null;
   id?: string | null;

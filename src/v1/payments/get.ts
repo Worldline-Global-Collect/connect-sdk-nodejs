@@ -3,12 +3,11 @@
  * https://apireference.connect.worldline-solutions.com/
  */
 import { json } from "../../utils/communicator";
-import { PaymentContext, SdkContext, SdkResponse } from "../../model";
+import { SdkContext, SdkResponse } from "../../model";
 import { ErrorResponse, PaymentResponse } from "../model/domain";
+import { GetPaymentParams } from "../model/payments";
 
-export function get(
-  sdkContext: SdkContext
-): (merchantId: string, paymentId: string, paymentContext?: PaymentContext | null) => Promise<SdkResponse<PaymentResponse, ErrorResponse>> {
+export function get(sdkContext: SdkContext): (merchantId: string, paymentId: string, paymentContext: GetPaymentParams) => Promise<SdkResponse<PaymentResponse, ErrorResponse>> {
   return function(merchantId, paymentId, paymentContext): Promise<SdkResponse<PaymentResponse, ErrorResponse>> {
     return json(
       {
