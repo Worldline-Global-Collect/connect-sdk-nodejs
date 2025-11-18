@@ -1,6 +1,6 @@
 {
   "name": "connect-sdk-nodejs",
-  "version": "6.0.0",
+  "version": "6.0.1",
   "description": "SDK to communicate with the Worldline Global Collect platform using the Worldline Connect Server API",
   "homepage": "https://github.com/Worldline-Global-Collect/connect-sdk-nodejs#readme",
   "bugs": {
@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "dateformat": "^4.6.3",
-    "form-data": "^4.0.0",
+    "form-data": "^4.0.5",
     "jsonschema": "^1.4.1",
     "lodash": "^4.17.21",
     "secure-compare": "^3.0.1",
