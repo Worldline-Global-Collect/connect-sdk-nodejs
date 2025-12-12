@@ -453,6 +453,7 @@ export interface CapturePaymentRequest {
 export interface CaptureResponse extends Capture {}
 
 export interface CaptureStatusOutput {
+  isFinal?: boolean | null;
   isRefundable?: boolean | null;
   isRetriable?: boolean | null;
   providerRawOutput?: KeyValuePair[] | null;
@@ -1906,10 +1907,6 @@ export interface PaymentProduct806SpecificOutput {
   customerAccount?: TrustlyBankAccount | null;
 }
 
-export interface PaymentProduct836SpecificOutput {
-  securityIndicator?: string | null;
-}
-
 export interface PaymentProduct840CustomerAccount {
   accountId?: string | null;
   billingAgreementId?: string | null;
@@ -2209,7 +2206,6 @@ export interface RedirectPaymentMethodSpecificOutput extends AbstractPaymentMeth
   fraudResults?: FraudResults | null;
   paymentProduct3201SpecificOutput?: PaymentProduct3201SpecificOutput | null;
   paymentProduct806SpecificOutput?: PaymentProduct806SpecificOutput | null;
-  paymentProduct836SpecificOutput?: PaymentProduct836SpecificOutput | null;
   paymentProduct840SpecificOutput?: PaymentProduct840SpecificOutput | null;
   paymentProduct866SpecificOutput?: PaymentProduct866SpecificOutput | null;
   token?: string | null;
@@ -2337,6 +2333,7 @@ export interface RefundPaymentProduct840SpecificOutput {
 }
 
 export interface RefundReferences {
+  descriptor?: string | null;
   merchantReference?: string | null;
 }
 
@@ -2345,6 +2342,7 @@ export interface RefundRequest {
   bankRefundMethodSpecificInput?: BankRefundMethodSpecificInput | null;
   customer?: RefundCustomer | null;
   refundDate?: string | null;
+  refundReason?: string | null;
   refundReferences?: RefundReferences | null;
 }
 

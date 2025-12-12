@@ -18,7 +18,7 @@ interface ServerMetaInfo {
 export function serverMetaInfo(sdkContext: SdkContext): Header {
   const info: ServerMetaInfo = {
     sdkCreator: "Worldline",
-    sdkIdentifier: "NodejsServerSDK/v6.0.1",
+    sdkIdentifier: "NodejsServerSDK/v6.1.0",
     platformIdentifier: `${process.env["OS"]} Node.js/${process.versions.node}`,
     integrator: sdkContext.getIntegrator()
   };
