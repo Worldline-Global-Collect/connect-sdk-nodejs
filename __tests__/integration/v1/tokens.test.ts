@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 
+import * as dateformat from "dateformat";
 import { assertSuccess } from "../../../src";
 import client, { config } from "../init";
 
@@ -8,6 +9,9 @@ import client, { config } from "../init";
  */
 describe("token", () => {
   test("created and deleted successfully", async () => {
+    const expiryDate = new Date();
+    expiryDate.setMonth(expiryDate.getMonth() + 6);
+
     const body = {
       paymentProductId: 1,
       card: {
@@ -21,7 +25,7 @@ describe("token", () => {
             cardholderName: "Jan",
             issueNumber: "12",
             cardNumber: "4567350000427977",
-            expiryDate: "1225"
+            expiryDate: dateformat(expiryDate, "mmyy")
           }
         }
       }
