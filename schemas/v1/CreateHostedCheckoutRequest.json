@@ -379,6 +379,19 @@
       },
       "additionalProperties" : false
     },
+    "AutomaticReloadBillingDetails" : {
+      "type" : "object",
+      "properties" : {
+        "automaticReloadPaymentThresholdAmount" : {
+          "type" : "integer",
+          "maximum" : 9223372036854775807
+        },
+        "description" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
     "BankAccountIban" : {
       "type" : "object",
       "properties" : {
@@ -731,6 +744,24 @@
         "numberOfPurchasesLast6Months" : {
           "type" : "integer",
           "maximum" : 2147483647
+        }
+      },
+      "additionalProperties" : false
+    },
+    "DeferredBillingDetails" : {
+      "type" : "object",
+      "properties" : {
+        "deferredPaymentDate" : {
+          "type" : "string"
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "freeCancellationDate" : {
+          "type" : "string"
+        },
+        "freeCancellationDateTimeZone" : {
+          "type" : "string"
         }
       },
       "additionalProperties" : false
@@ -1292,6 +1323,9 @@
         "customerReference" : {
           "type" : "string"
         },
+        "initialSchemeTransactionId" : {
+          "type" : "string"
+        },
         "paymentProduct302SpecificInput" : {
           "$ref" : "#/definitions/MobilePaymentProduct302SpecificInputHostedCheckout"
         },
@@ -1302,11 +1336,26 @@
           "type" : "integer",
           "maximum" : 2147483647
         },
+        "recurring" : {
+          "$ref" : "#/definitions/CardRecurrenceDetails"
+        },
         "requiresApproval" : {
           "type" : "boolean"
         },
         "skipFraudService" : {
           "type" : "boolean"
+        },
+        "token" : {
+          "type" : "string"
+        },
+        "tokenize" : {
+          "type" : "boolean"
+        },
+        "unscheduledCardOnFileRequestor" : {
+          "type" : "string"
+        },
+        "unscheduledCardOnFileSequenceIndicator" : {
+          "type" : "string"
         }
       },
       "additionalProperties" : false
@@ -1509,6 +1558,36 @@
       },
       "additionalProperties" : false
     },
+    "PaymentProduct302SpecificInput" : {
+      "type" : "object",
+      "properties" : {
+        "automaticReloadBilling" : {
+          "$ref" : "#/definitions/AutomaticReloadBillingDetails"
+        },
+        "billingAgreement" : {
+          "type" : "string"
+        },
+        "deferredBilling" : {
+          "$ref" : "#/definitions/DeferredBillingDetails"
+        },
+        "managementUrl" : {
+          "type" : "string"
+        },
+        "paymentDescription" : {
+          "type" : "string"
+        },
+        "regularBilling" : {
+          "$ref" : "#/definitions/RecurringBillingDetails"
+        },
+        "tokenNotificationUrl" : {
+          "type" : "string"
+        },
+        "trialBilling" : {
+          "$ref" : "#/definitions/RecurringBillingDetails"
+        }
+      },
+      "additionalProperties" : false
+    },
     "PaymentProductFilter" : {
       "type" : "object",
       "properties" : {
@@ -1598,11 +1677,29 @@
       },
       "additionalProperties" : false
     },
+    "RecurringBillingDetails" : {
+      "type" : "object",
+      "properties" : {
+        "description" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
     "RecurringPaymentsData" : {
       "type" : "object",
       "properties" : {
+        "paymentProduct302SpecificInput" : {
+          "$ref" : "#/definitions/PaymentProduct302SpecificInput"
+        },
+        "recurringEndDate" : {
+          "type" : "string"
+        },
         "recurringInterval" : {
           "$ref" : "#/definitions/Frequency"
+        },
+        "recurringStartDate" : {
+          "type" : "string"
         },
         "trialInformation" : {
           "$ref" : "#/definitions/TrialInformation"
@@ -1916,6 +2013,9 @@
         },
         "isRecurring" : {
           "type" : "boolean"
+        },
+        "startDate" : {
+          "type" : "string"
         },
         "trialPeriod" : {
           "$ref" : "#/definitions/TrialPeriod"

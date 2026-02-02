@@ -56,6 +56,19 @@ export interface AbstractIndicator {
   value?: string | null;
 }
 
+export interface AbstractMobilePaymentMethodSpecificInput extends AbstractPaymentMethodSpecificInput {
+  authorizationMode?: string | null;
+  customerReference?: string | null;
+  initialSchemeTransactionId?: string | null;
+  recurring?: CardRecurrenceDetails | null;
+  requiresApproval?: boolean | null;
+  skipFraudService?: boolean | null;
+  token?: string | null;
+  tokenize?: boolean | null;
+  unscheduledCardOnFileRequestor?: string | null;
+  unscheduledCardOnFileSequenceIndicator?: string | null;
+}
+
 export interface AbstractOrderStatus {
   id?: string | null;
 }
@@ -306,6 +319,10 @@ export interface ApproveTokenRequest extends MandateApproval {}
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface AuthenticationIndicator extends AbstractIndicator {}
 
+export interface AutomaticReloadBillingDetails extends BaseBillingDetails {
+  automaticReloadPaymentThresholdAmount?: number | null;
+}
+
 export interface BankAccount {
   accountHolderName?: string | null;
 }
@@ -377,6 +394,10 @@ export interface BankTransferPayoutMethodSpecificInput extends AbstractPayoutMet
   payoutDate?: string | null;
   payoutText?: string | null;
   swiftCode?: string | null;
+}
+
+export interface BaseBillingDetails {
+  description?: string | null;
 }
 
 export interface BoletoBancarioRequirednessValidator {
@@ -939,6 +960,12 @@ export interface DecryptedPaymentData {
   expiryDate?: string | null;
   pan?: string | null;
   paymentMethod?: string | null;
+}
+
+export interface DeferredBillingDetails extends BaseBillingDetails {
+  deferredPaymentDate?: string | null;
+  freeCancellationDate?: string | null;
+  freeCancellationDateTimeZone?: string | null;
 }
 
 export interface DeviceFingerprintDetails {
@@ -1599,31 +1626,28 @@ export interface MobilePaymentData {
   expiryDate?: string | null;
 }
 
-export interface MobilePaymentMethodSpecificInput extends AbstractPaymentMethodSpecificInput {
-  authorizationMode?: string | null;
-  customerReference?: string | null;
+export interface MobilePaymentMethodSpecificInput extends AbstractMobilePaymentMethodSpecificInput {
   decryptedPaymentData?: DecryptedPaymentData | null;
   encryptedPaymentData?: string | null;
+  isRecurring?: boolean | null;
+  merchantInitiatedReasonIndicator?: string | null;
   paymentProduct320SpecificInput?: MobilePaymentProduct320SpecificInput | null;
-  requiresApproval?: boolean | null;
-  skipFraudService?: boolean | null;
 }
 
-export interface MobilePaymentMethodSpecificInputHostedCheckout extends AbstractPaymentMethodSpecificInput {
-  authorizationMode?: string | null;
-  customerReference?: string | null;
+export interface MobilePaymentMethodSpecificInputHostedCheckout extends AbstractMobilePaymentMethodSpecificInput {
   paymentProduct302SpecificInput?: MobilePaymentProduct302SpecificInputHostedCheckout | null;
   paymentProduct320SpecificInput?: MobilePaymentProduct320SpecificInputHostedCheckout | null;
-  requiresApproval?: boolean | null;
-  skipFraudService?: boolean | null;
 }
 
 export interface MobilePaymentMethodSpecificOutput extends AbstractPaymentMethodSpecificOutput {
   authorisationCode?: string | null;
   fraudResults?: CardFraudResults | null;
+  initialSchemeTransactionId?: string | null;
   network?: string | null;
   paymentData?: MobilePaymentData | null;
+  schemeTransactionId?: string | null;
   threeDSecureResults?: ThreeDSecureResults | null;
+  token?: string | null;
 }
 
 export interface MobilePaymentProduct302SpecificInputHostedCheckout {
@@ -1887,6 +1911,17 @@ export interface PaymentProduct {
 
 export interface PaymentProduct302SpecificData {
   networks?: string[] | null;
+}
+
+export interface PaymentProduct302SpecificInput {
+  automaticReloadBilling?: AutomaticReloadBillingDetails | null;
+  billingAgreement?: string | null;
+  deferredBilling?: DeferredBillingDetails | null;
+  managementUrl?: string | null;
+  paymentDescription?: string | null;
+  regularBilling?: RecurringBillingDetails | null;
+  tokenNotificationUrl?: string | null;
+  trialBilling?: RecurringBillingDetails | null;
 }
 
 export interface PaymentProduct3201SpecificOutput {
@@ -2163,8 +2198,14 @@ export interface RangeValidator {
   minValue?: number | null;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+export interface RecurringBillingDetails extends BaseBillingDetails {}
+
 export interface RecurringPaymentsData {
+  paymentProduct302SpecificInput?: PaymentProduct302SpecificInput | null;
+  recurringEndDate?: string | null;
   recurringInterval?: Frequency | null;
+  recurringStartDate?: string | null;
   trialInformation?: TrialInformation | null;
 }
 
@@ -2624,6 +2665,7 @@ export interface TrialInformation {
   amountOfMoneyAfterTrial?: AmountOfMoney | null;
   endDate?: string | null;
   isRecurring?: boolean | null;
+  startDate?: string | null;
   trialPeriod?: TrialPeriod | null;
   trialPeriodRecurring?: Frequency | null;
 }

@@ -1514,6 +1514,15 @@
         "encryptedPaymentData" : {
           "type" : "string"
         },
+        "initialSchemeTransactionId" : {
+          "type" : "string"
+        },
+        "isRecurring" : {
+          "type" : "boolean"
+        },
+        "merchantInitiatedReasonIndicator" : {
+          "type" : "string"
+        },
         "paymentProduct320SpecificInput" : {
           "$ref" : "#/definitions/MobilePaymentProduct320SpecificInput"
         },
@@ -1521,11 +1530,26 @@
           "type" : "integer",
           "maximum" : 2147483647
         },
+        "recurring" : {
+          "$ref" : "#/definitions/CardRecurrenceDetails"
+        },
         "requiresApproval" : {
           "type" : "boolean"
         },
         "skipFraudService" : {
           "type" : "boolean"
+        },
+        "token" : {
+          "type" : "string"
+        },
+        "tokenize" : {
+          "type" : "boolean"
+        },
+        "unscheduledCardOnFileRequestor" : {
+          "type" : "string"
+        },
+        "unscheduledCardOnFileSequenceIndicator" : {
+          "type" : "string"
         }
       },
       "additionalProperties" : false
