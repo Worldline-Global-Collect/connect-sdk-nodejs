@@ -560,6 +560,8 @@ export interface CashPaymentMethodSpecificInput extends AbstractCashPaymentMetho
    */
   paymentProduct1503SpecificInput?: CashPaymentProduct1503SpecificInput | null;
   paymentProduct1504SpecificInput?: CashPaymentProduct1504SpecificInput | null;
+  paymentProduct1506SpecificInput?: CashPaymentProduct1506SpecificInput | null;
+  paymentProduct1508SpecificInput?: CashPaymentProduct1508SpecificInput | null;
   paymentProduct1521SpecificInput?: CashPaymentProduct1521SpecificInput | null;
   paymentProduct1522SpecificInput?: CashPaymentProduct1522SpecificInput | null;
   paymentProduct1523SpecificInput?: CashPaymentProduct1523SpecificInput | null;
@@ -588,6 +590,12 @@ export interface CashPaymentProduct1503SpecificInput {
 export interface CashPaymentProduct1504SpecificInput extends CashPaymentProductWithRedirectSpecificInputBase {}
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
+export interface CashPaymentProduct1506SpecificInput extends CashPaymentProductWithRedirectSpecificInputBase {}
+
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+export interface CashPaymentProduct1508SpecificInput extends CashPaymentProductWithRedirectSpecificInputBase {}
+
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface CashPaymentProduct1521SpecificInput extends CashPaymentProductWithRedirectSpecificInputBase {}
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
@@ -604,6 +612,24 @@ export interface CashPaymentProduct1526SpecificInput extends CashPaymentProductW
 
 export interface CashPaymentProductWithRedirectSpecificInputBase {
   returnUrl?: string | null;
+}
+
+export interface ClickToPayConfiguration {
+  mastercard?: ClickToPayConfigurationMastercard | null;
+  visa?: ClickToPayConfigurationVisa | null;
+}
+
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+export interface ClickToPayConfigurationMastercard extends ClickToPaySchemeConfigurationBase {}
+
+export interface ClickToPayConfigurationVisa extends ClickToPaySchemeConfigurationBase {
+  encryptionKey?: string | null;
+  nModulus?: string | null;
+}
+
+export interface ClickToPaySchemeConfigurationBase {
+  srcDpaId?: string | null;
+  srcInitiatorId?: string | null;
 }
 
 export interface CompanyInformation {
@@ -963,6 +989,7 @@ export interface DecryptedPaymentData {
 }
 
 export interface DeferredBillingDetails extends BaseBillingDetails {
+  deferredPaymentAmount?: number | null;
   deferredPaymentDate?: string | null;
   freeCancellationDate?: string | null;
   freeCancellationDateTimeZone?: string | null;
@@ -1884,12 +1911,14 @@ export interface PaymentOutput extends OrderOutput {
 export interface PaymentProduct {
   accountsOnFile?: AccountOnFile[] | null;
   acquirerCountry?: string | null;
+  allowsClickToPay?: boolean | null;
   allowsInstallments?: boolean | null;
   allowsRecurring?: boolean | null;
   allowsTokenization?: boolean | null;
   authenticationIndicator?: AuthenticationIndicator | null;
   autoTokenized?: boolean | null;
   canBeIframed?: boolean | null;
+  clickToPayConfiguration?: ClickToPayConfiguration | null;
   deviceFingerprintEnabled?: boolean | null;
   displayHints?: PaymentProductDisplayHints | null;
   fields?: PaymentProductField[] | null;
@@ -2061,7 +2090,9 @@ export interface PaymentProductFiltersHostedCheckout {
 
 export interface PaymentProductGroup {
   accountsOnFile?: AccountOnFile[] | null;
+  allowsClickToPay?: boolean | null;
   allowsInstallments?: boolean | null;
+  clickToPayConfiguration?: ClickToPayConfiguration | null;
   deviceFingerprintEnabled?: boolean | null;
   displayHints?: PaymentProductDisplayHints | null;
   fields?: PaymentProductField[] | null;

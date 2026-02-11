@@ -751,6 +751,10 @@
     "DeferredBillingDetails" : {
       "type" : "object",
       "properties" : {
+        "deferredPaymentAmount" : {
+          "type" : "integer",
+          "maximum" : 9223372036854775807
+        },
         "deferredPaymentDate" : {
           "type" : "string"
         },
