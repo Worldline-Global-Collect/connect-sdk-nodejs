@@ -16,8 +16,8 @@ async function prepareRequest(request: SdkRequest, sdkContext: SdkContext, optio
     for (const key in request.paymentContext) {
       if (key !== "extraHeaders" && key !== "idempotence") {
         if (Array.isArray(request.paymentContext[key])) {
-          for (const value in request.paymentContext[key]) {
-            path += `${separator + key}=${request.paymentContext[key][value]}`;
+          for (const value of request.paymentContext[key]) {
+            path += `${separator + key}=${value}`;
             separator = "&";
           }
         } else {

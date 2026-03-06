@@ -615,6 +615,7 @@ export interface CashPaymentProductWithRedirectSpecificInputBase {
 }
 
 export interface ClickToPayConfiguration {
+  displayHints?: ClickToPayDisplayHints | null;
   mastercard?: ClickToPayConfigurationMastercard | null;
   visa?: ClickToPayConfigurationVisa | null;
 }
@@ -625,6 +626,10 @@ export interface ClickToPayConfigurationMastercard extends ClickToPaySchemeConfi
 export interface ClickToPayConfigurationVisa extends ClickToPaySchemeConfigurationBase {
   encryptionKey?: string | null;
   nModulus?: string | null;
+}
+
+export interface ClickToPayDisplayHints {
+  logo?: string | null;
 }
 
 export interface ClickToPaySchemeConfigurationBase {
