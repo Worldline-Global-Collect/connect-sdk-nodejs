@@ -11,6 +11,7 @@ import { tokenize } from "./tokenize";
 import { processchallenged } from "./processchallenged";
 import { approve } from "./approve";
 import { capture } from "./capture";
+import { finalizecapture } from "./finalizecapture";
 import { cancelapproval } from "./cancelapproval";
 import { captures } from "./captures";
 import { refund } from "./refund";
@@ -33,6 +34,7 @@ export function newPaymentsClient(sdkContext: SdkContext): PaymentsClient {
     processchallenged: processchallenged(sdkContext),
     approve: approve(sdkContext),
     capture: capture(sdkContext),
+    finalizecapture: finalizecapture(sdkContext),
     cancelapproval: cancelapproval(sdkContext),
     captures: captures(sdkContext),
     refund: refund(sdkContext),

@@ -85,6 +85,10 @@ export interface PaymentsClient {
    */
   capture(merchantId: string, paymentId: string, postData: CapturePaymentRequest, paymentContext?: PaymentContext | null): Promise<SdkResponse<CaptureResponse, ErrorResponse>>;
   /**
+   * Resource /{merchantId}/payments/{paymentId}/finalizecapture - <a href="https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/nodejs/payments/finalizecapture.html">Finalize capture</a>
+   */
+  finalizecapture(merchantId: string, paymentId: string, paymentContext?: PaymentContext | null): Promise<SdkResponse<PaymentResponse, ErrorResponse>>;
+  /**
    * Resource /{merchantId}/payments/{paymentId}/cancelapproval - <a href="https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/nodejs/payments/cancelapproval.html">Undo capture payment</a>
    */
   cancelapproval(merchantId: string, paymentId: string, paymentContext?: PaymentContext | null): Promise<SdkResponse<CancelApprovalPaymentResponse, ErrorResponse>>;

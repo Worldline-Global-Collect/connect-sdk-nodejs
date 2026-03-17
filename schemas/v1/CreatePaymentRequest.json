@@ -584,6 +584,9 @@
     "CashPaymentMethodSpecificInput" : {
       "type" : "object",
       "properties" : {
+        "paymentProduct1502SpecificInput" : {
+          "$ref" : "#/definitions/CashPaymentProduct1502SpecificInput"
+        },
         "paymentProduct1503SpecificInput" : {
           "$ref" : "#/definitions/CashPaymentProduct1503SpecificInput"
         },
@@ -608,12 +611,24 @@
         "paymentProduct1524SpecificInput" : {
           "$ref" : "#/definitions/CashPaymentProduct1524SpecificInput"
         },
+        "paymentProduct1525SpecificInput" : {
+          "$ref" : "#/definitions/CashPaymentProduct1525SpecificInput"
+        },
         "paymentProduct1526SpecificInput" : {
           "$ref" : "#/definitions/CashPaymentProduct1526SpecificInput"
         },
         "paymentProductId" : {
           "type" : "integer",
           "maximum" : 2147483647
+        }
+      },
+      "additionalProperties" : false
+    },
+    "CashPaymentProduct1502SpecificInput" : {
+      "type" : "object",
+      "properties" : {
+        "returnUrl" : {
+          "type" : "string"
         }
       },
       "additionalProperties" : false
@@ -682,6 +697,15 @@
       "additionalProperties" : false
     },
     "CashPaymentProduct1524SpecificInput" : {
+      "type" : "object",
+      "properties" : {
+        "returnUrl" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "CashPaymentProduct1525SpecificInput" : {
       "type" : "object",
       "properties" : {
         "returnUrl" : {

@@ -555,6 +555,7 @@ export interface CardWithoutCvv extends CardEssentials {
 }
 
 export interface CashPaymentMethodSpecificInput extends AbstractCashPaymentMethodSpecificInput {
+  paymentProduct1502SpecificInput?: CashPaymentProduct1502SpecificInput | null;
   /**
    * @deprecated No replacement
    */
@@ -566,6 +567,7 @@ export interface CashPaymentMethodSpecificInput extends AbstractCashPaymentMetho
   paymentProduct1522SpecificInput?: CashPaymentProduct1522SpecificInput | null;
   paymentProduct1523SpecificInput?: CashPaymentProduct1523SpecificInput | null;
   paymentProduct1524SpecificInput?: CashPaymentProduct1524SpecificInput | null;
+  paymentProduct1525SpecificInput?: CashPaymentProduct1525SpecificInput | null;
   paymentProduct1526SpecificInput?: CashPaymentProduct1526SpecificInput | null;
 }
 
@@ -575,6 +577,9 @@ export interface CashPaymentMethodSpecificInputBase extends AbstractCashPaymentM
 export interface CashPaymentMethodSpecificOutput extends AbstractPaymentMethodSpecificOutput {
   fraudResults?: FraudResults | null;
 }
+
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+export interface CashPaymentProduct1502SpecificInput extends CashPaymentProductWithRedirectSpecificInputBase {}
 
 /**
  * @deprecated No replacement
@@ -606,6 +611,9 @@ export interface CashPaymentProduct1523SpecificInput extends CashPaymentProductW
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface CashPaymentProduct1524SpecificInput extends CashPaymentProductWithRedirectSpecificInputBase {}
+
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+export interface CashPaymentProduct1525SpecificInput extends CashPaymentProductWithRedirectSpecificInputBase {}
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface CashPaymentProduct1526SpecificInput extends CashPaymentProductWithRedirectSpecificInputBase {}
