@@ -506,6 +506,7 @@ export interface CardFraudResults extends FraudResults {
 
 export interface CardPaymentMethodSpecificInput extends AbstractCardPaymentMethodSpecificInput {
   card?: Card | null;
+  clickToPay?: ClickToPayInput | null;
   /**
    * @deprecated Use threeDSecure.externalCardholderAuthenticationData instead
    */
@@ -527,6 +528,7 @@ export interface CardPaymentMethodSpecificInputBase extends AbstractCardPaymentM
 export interface CardPaymentMethodSpecificOutput extends AbstractPaymentMethodSpecificOutput {
   authorisationCode?: string | null;
   card?: CardEssentials | null;
+  clickToPayUsed?: boolean | null;
   fraudResults?: CardFraudResults | null;
   initialSchemeTransactionId?: string | null;
   networkTokenData?: NetworkTokenData | null;
@@ -640,9 +642,13 @@ export interface ClickToPayDisplayHints {
   logo?: string | null;
 }
 
+export interface ClickToPayInput {
+  checkoutResponseSignature?: string | null;
+}
+
 export interface ClickToPaySchemeConfigurationBase {
-  srcDpaId?: string | null;
   srcInitiatorId?: string | null;
+  srciDpaId?: string | null;
 }
 
 export interface CompanyInformation {
@@ -1342,6 +1348,7 @@ export interface GiftCardPurchase {
 }
 
 export interface HostedCheckoutSpecificInput {
+  allowClickToPay?: boolean | null;
   isRecurring?: boolean | null;
   locale?: string | null;
   paymentProductFilters?: PaymentProductFiltersHostedCheckout | null;

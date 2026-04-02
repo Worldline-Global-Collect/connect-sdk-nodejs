@@ -935,6 +935,9 @@
     "HostedCheckoutSpecificInput" : {
       "type" : "object",
       "properties" : {
+        "allowClickToPay" : {
+          "type" : "boolean"
+        },
         "isRecurring" : {
           "type" : "boolean"
         },
