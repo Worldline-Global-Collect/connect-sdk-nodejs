@@ -15,6 +15,39 @@
   },
   "additionalProperties" : false,
   "definitions" : {
+    "AddressPersonal" : {
+      "type" : "object",
+      "properties" : {
+        "additionalInfo" : {
+          "type" : "string"
+        },
+        "city" : {
+          "type" : "string"
+        },
+        "countryCode" : {
+          "type" : "string"
+        },
+        "houseNumber" : {
+          "type" : "string"
+        },
+        "name" : {
+          "$ref" : "#/definitions/PersonalName"
+        },
+        "state" : {
+          "type" : "string"
+        },
+        "stateCode" : {
+          "type" : "string"
+        },
+        "street" : {
+          "type" : "string"
+        },
+        "zip" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
     "AirlineData" : {
       "type" : "object",
       "properties" : {
@@ -205,6 +238,9 @@
         },
         "references" : {
           "$ref" : "#/definitions/CapturePaymentOrderReferences"
+        },
+        "shipping" : {
+          "$ref" : "#/definitions/Shipping"
         }
       },
       "additionalProperties" : false
@@ -342,6 +378,63 @@
           "type" : "string"
         },
         "typeOfRoom" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "PersonalName" : {
+      "type" : "object",
+      "properties" : {
+        "firstName" : {
+          "type" : "string"
+        },
+        "surname" : {
+          "type" : "string"
+        },
+        "surnamePrefix" : {
+          "type" : "string"
+        },
+        "title" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "Shipping" : {
+      "type" : "object",
+      "properties" : {
+        "address" : {
+          "$ref" : "#/definitions/AddressPersonal"
+        },
+        "addressIndicator" : {
+          "type" : "string"
+        },
+        "carrier" : {
+          "type" : "string"
+        },
+        "comments" : {
+          "type" : "string"
+        },
+        "emailAddress" : {
+          "type" : "string"
+        },
+        "firstUsageDate" : {
+          "type" : "string"
+        },
+        "instructions" : {
+          "type" : "string"
+        },
+        "isFirstUsage" : {
+          "type" : "boolean"
+        },
+        "shippedFromZip" : {
+          "type" : "string"
+        },
+        "trackingNumber" : {
+          "type" : "string"
+        },
+        "type" : {
           "type" : "string"
         }
       },

@@ -453,6 +453,7 @@ export interface CaptureOutput extends OrderOutput {
 export interface CapturePaymentOrder {
   additionalInput?: CapturePaymentOrderAdditionalInput | null;
   references?: CapturePaymentOrderReferences | null;
+  shipping?: Shipping | null;
 }
 
 export interface CapturePaymentOrderAdditionalInput {
@@ -1933,6 +1934,7 @@ export interface PaymentProduct {
   acquirerCountry?: string | null;
   allowsClickToPay?: boolean | null;
   allowsInstallments?: boolean | null;
+  allowsMultiplePartialCaptures?: boolean | null;
   allowsRecurring?: boolean | null;
   allowsTokenization?: boolean | null;
   authenticationIndicator?: AuthenticationIndicator | null;
