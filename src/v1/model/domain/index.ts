@@ -1390,7 +1390,6 @@ export interface HostedMandateManagementSpecificInput {
   variant?: string | null;
 }
 
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
 export interface IINDetail {
   isAllowedInContext?: boolean | null;
   paymentProductId?: number | null;

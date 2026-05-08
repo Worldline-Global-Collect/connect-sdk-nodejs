@@ -22,7 +22,7 @@ This repository consists out of three main components:
 
 ## Requirements
 
-Node.js 12 or higher is required.
+Node.js 16 or higher is required.
 
 ## Installation
 

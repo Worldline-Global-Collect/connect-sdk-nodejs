@@ -68,17 +68,14 @@ function applyObfuscationRules(json: unknown, obfuscationRules: ObfuscationRules
   if (Array.isArray(json)) {
     return json.map(value => applyObfuscationRules(value, obfuscationRules, toLowerCase));
   }
-  // Cannot use Object.fromEntries with the current compiler target
-  // Therefore don't map to entries but directly add to this new object
-  const result = {};
-  Object.entries(json).forEach(([key, value]) => {
+  const entries = Object.entries(json).map(([key, value]) => {
     const newValue =
       value !== null && typeof value === "object"
         ? applyObfuscationRules(value, obfuscationRules, toLowerCase)
         : applyObfuscationRule(value, obfuscationRules[obfuscationRuleKey(key, toLowerCase)]);
-    result[key] = newValue;
+    return [key, newValue];
   });
-  return result;
+  return Object.fromEntries(entries);
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
