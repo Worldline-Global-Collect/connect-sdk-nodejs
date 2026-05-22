@@ -35,7 +35,7 @@
     "jsonschema": "^1.5.0",
     "lodash": "^4.18.1",
     "secure-compare": "^3.0.1",
-    "uuid": "^11.1.1"
+    "uuid": "^14.0.0"
   },
   "devDependencies": {
     "@types/body-parser": "^1.19.6",
@@ -52,7 +52,7 @@
     "express": "^4.22.1",
     "husky": "^4.3.8",
     "jest": "^29.7.0",
-    "jest-junit": "^16.0.0",
+    "jest-junit": "^17.0.0",
     "jest-runner-groups": "^2.2.0",
     "nock": "^13.5.6",
     "prettier": "^1.19.1",
