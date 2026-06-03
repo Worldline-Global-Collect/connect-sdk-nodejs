@@ -240,7 +240,7 @@
           "$ref" : "#/definitions/CapturePaymentOrderReferences"
         },
         "shipping" : {
-          "$ref" : "#/definitions/Shipping"
+          "$ref" : "#/definitions/CapturePaymentShipping"
         }
       },
       "additionalProperties" : false
@@ -261,6 +261,24 @@
       "type" : "object",
       "properties" : {
         "merchantCaptureReference" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "CapturePaymentShipping" : {
+      "type" : "object",
+      "properties" : {
+        "address" : {
+          "$ref" : "#/definitions/AddressPersonal"
+        },
+        "emailAddress" : {
+          "type" : "string"
+        },
+        "shippedFromZip" : {
+          "type" : "string"
+        },
+        "trackingNumber" : {
           "type" : "string"
         }
       },
@@ -396,45 +414,6 @@
           "type" : "string"
         },
         "title" : {
-          "type" : "string"
-        }
-      },
-      "additionalProperties" : false
-    },
-    "Shipping" : {
-      "type" : "object",
-      "properties" : {
-        "address" : {
-          "$ref" : "#/definitions/AddressPersonal"
-        },
-        "addressIndicator" : {
-          "type" : "string"
-        },
-        "carrier" : {
-          "type" : "string"
-        },
-        "comments" : {
-          "type" : "string"
-        },
-        "emailAddress" : {
-          "type" : "string"
-        },
-        "firstUsageDate" : {
-          "type" : "string"
-        },
-        "instructions" : {
-          "type" : "string"
-        },
-        "isFirstUsage" : {
-          "type" : "boolean"
-        },
-        "shippedFromZip" : {
-          "type" : "string"
-        },
-        "trackingNumber" : {
-          "type" : "string"
-        },
-        "type" : {
           "type" : "string"
         }
       },

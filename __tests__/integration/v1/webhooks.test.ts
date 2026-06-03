@@ -64,6 +64,9 @@ const validBody = `{
 
 const validSignature = "2S7doBj/GnJnacIjSJzr5fxGM5xmfQyFAwxv1I53ZEk=";
 
+/**
+ * @group integration
+ */
 describe("webhooks", () => {
   test("when received event from express", done => {
     request(app)

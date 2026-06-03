@@ -453,7 +453,7 @@ export interface CaptureOutput extends OrderOutput {
 export interface CapturePaymentOrder {
   additionalInput?: CapturePaymentOrderAdditionalInput | null;
   references?: CapturePaymentOrderReferences | null;
-  shipping?: Shipping | null;
+  shipping?: CapturePaymentShipping | null;
 }
 
 export interface CapturePaymentOrderAdditionalInput {
@@ -469,6 +469,13 @@ export interface CapturePaymentRequest {
   amount?: number | null;
   isFinal?: boolean | null;
   order?: CapturePaymentOrder | null;
+}
+
+export interface CapturePaymentShipping {
+  address?: AddressPersonal | null;
+  emailAddress?: string | null;
+  shippedFromZip?: string | null;
+  trackingNumber?: string | null;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
