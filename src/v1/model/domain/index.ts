@@ -1329,9 +1329,11 @@ export interface GetIINDetailsRequest {
 }
 
 export interface GetIINDetailsResponse {
+  binProductType?: string | null;
   coBrands?: IINDetail[] | null;
   countryCode?: string | null;
   isAllowedInContext?: boolean | null;
+  issuerName?: string | null;
   paymentProductId?: number | null;
 }
 

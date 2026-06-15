@@ -1,6 +1,6 @@
 {
   "name": "connect-sdk-nodejs",
-  "version": "8.0.0",
+  "version": "8.1.0",
   "description": "SDK to communicate with the Worldline Global Collect platform using the Worldline Connect Server API",
   "homepage": "https://github.com/Worldline-Global-Collect/connect-sdk-nodejs#readme",
   "bugs": {
