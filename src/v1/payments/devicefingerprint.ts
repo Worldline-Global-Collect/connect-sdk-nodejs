@@ -9,7 +9,7 @@ import { DeviceFingerprintDetails, ErrorResponse } from "../model/domain";
 export function devicefingerprint(
   sdkContext: SdkContext
 ): (merchantId: string, paymentId: string, paymentContext?: PaymentContext | null) => Promise<SdkResponse<DeviceFingerprintDetails, ErrorResponse>> {
-  return function(merchantId, paymentId, paymentContext): Promise<SdkResponse<DeviceFingerprintDetails, ErrorResponse>> {
+  return function (merchantId, paymentId, paymentContext): Promise<SdkResponse<DeviceFingerprintDetails, ErrorResponse>> {
     return json(
       {
         method: "GET",

@@ -9,7 +9,7 @@ import { DisputesResponse, ErrorResponse } from "../model/domain";
 export function disputes(
   sdkContext: SdkContext
 ): (merchantId: string, paymentId: string, paymentContext?: PaymentContext | null) => Promise<SdkResponse<DisputesResponse, ErrorResponse>> {
-  return function(merchantId, paymentId, paymentContext): Promise<SdkResponse<DisputesResponse, ErrorResponse>> {
+  return function (merchantId, paymentId, paymentContext): Promise<SdkResponse<DisputesResponse, ErrorResponse>> {
     return json(
       {
         method: "GET",

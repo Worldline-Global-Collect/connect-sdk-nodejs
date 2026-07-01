@@ -13,7 +13,7 @@ const requestSchema = require("../../../schemas/v1/ApproveRefundRequest.json");
 export function approve(
   sdkContext: SdkContext
 ): (merchantId: string, refundId: string, postData: ApproveRefundRequest, paymentContext?: PaymentContext | null) => Promise<SdkResponse<void, ErrorResponse>> {
-  return function(merchantId, refundId, postData, paymentContext): Promise<SdkResponse<void, ErrorResponse>> {
+  return function (merchantId, refundId, postData, paymentContext): Promise<SdkResponse<void, ErrorResponse>> {
     // validate postData
     const isValidRequest = validate(postData, requestSchema);
     if (!isValidRequest.valid) {

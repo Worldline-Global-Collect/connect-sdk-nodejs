@@ -13,7 +13,7 @@ const requestSchema = require("../../../schemas/v1/ApproveTokenRequest.json");
 export function approvesepadirectdebit(
   sdkContext: SdkContext
 ): (merchantId: string, tokenId: string, postData: ApproveTokenRequest, paymentContext?: PaymentContext | null) => Promise<SdkResponse<void, ErrorResponse>> {
-  return function(merchantId, tokenId, postData, paymentContext): Promise<SdkResponse<void, ErrorResponse>> {
+  return function (merchantId, tokenId, postData, paymentContext): Promise<SdkResponse<void, ErrorResponse>> {
     // validate postData
     const isValidRequest = validate(postData, requestSchema);
     if (!isValidRequest.valid) {

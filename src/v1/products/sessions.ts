@@ -18,7 +18,7 @@ export function sessions(
   postData: CreatePaymentProductSessionRequest,
   paymentContext?: PaymentContext | null
 ) => Promise<SdkResponse<CreatePaymentProductSessionResponse, ErrorResponse>> {
-  return function(merchantId, paymentProductId, postData, paymentContext): Promise<SdkResponse<CreatePaymentProductSessionResponse, ErrorResponse>> {
+  return function (merchantId, paymentProductId, postData, paymentContext): Promise<SdkResponse<CreatePaymentProductSessionResponse, ErrorResponse>> {
     // validate postData
     const isValidRequest = validate(postData, requestSchema);
     if (!isValidRequest.valid) {

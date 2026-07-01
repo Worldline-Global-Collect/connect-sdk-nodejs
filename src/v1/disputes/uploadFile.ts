@@ -10,7 +10,7 @@ import { ErrorResponse, UploadDisputeFileResponse } from "../model/domain";
 export function uploadFile(
   sdkContext: SdkContext
 ): (merchantId: string, disputeId: string, postData: UploadFileRequest, paymentContext?: PaymentContext | null) => Promise<SdkResponse<UploadDisputeFileResponse, ErrorResponse>> {
-  return function(merchantId, disputeId, postData, paymentContext): Promise<SdkResponse<UploadDisputeFileResponse, ErrorResponse>> {
+  return function (merchantId, disputeId, postData, paymentContext): Promise<SdkResponse<UploadDisputeFileResponse, ErrorResponse>> {
     return multipart(
       {
         method: "POST",

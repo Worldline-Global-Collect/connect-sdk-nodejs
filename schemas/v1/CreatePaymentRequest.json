@@ -522,6 +522,9 @@
         "networkTokenData" : {
           "$ref" : "#/definitions/SchemeTokenData"
         },
+        "originalTransactionLinkId" : {
+          "type" : "string"
+        },
         "paymentProductId" : {
           "type" : "integer",
           "maximum" : 2147483647
@@ -1581,6 +1584,9 @@
           "type" : "boolean"
         },
         "merchantInitiatedReasonIndicator" : {
+          "type" : "string"
+        },
+        "originalTransactionLinkId" : {
           "type" : "string"
         },
         "paymentProduct320SpecificInput" : {

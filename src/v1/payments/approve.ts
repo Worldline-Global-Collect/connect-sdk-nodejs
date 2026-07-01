@@ -18,7 +18,7 @@ export function approve(
   postData: ApprovePaymentRequest,
   paymentContext?: PaymentContext | null
 ) => Promise<SdkResponse<PaymentApprovalResponse, ErrorResponse>> {
-  return function(merchantId, paymentId, postData, paymentContext): Promise<SdkResponse<PaymentApprovalResponse, ErrorResponse>> {
+  return function (merchantId, paymentId, postData, paymentContext): Promise<SdkResponse<PaymentApprovalResponse, ErrorResponse>> {
     // validate postData
     const isValidRequest = validate(postData, requestSchema);
     if (!isValidRequest.valid) {

@@ -8,7 +8,7 @@ import { ConvertAmount, ErrorResponse } from "../model/domain";
 import { ConvertAmountParams } from "../model/services";
 
 export function convertAmount(sdkContext: SdkContext): (merchantId: string, paymentContext: ConvertAmountParams) => Promise<SdkResponse<ConvertAmount, ErrorResponse>> {
-  return function(merchantId, paymentContext): Promise<SdkResponse<ConvertAmount, ErrorResponse>> {
+  return function (merchantId, paymentContext): Promise<SdkResponse<ConvertAmount, ErrorResponse>> {
     return json(
       {
         method: "GET",

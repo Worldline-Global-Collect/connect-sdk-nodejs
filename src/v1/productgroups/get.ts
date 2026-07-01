@@ -10,7 +10,7 @@ import { GetProductgroupParams } from "../model/productgroups";
 export function get(
   sdkContext: SdkContext
 ): (merchantId: string, paymentProductGroupId: string, paymentContext: GetProductgroupParams) => Promise<SdkResponse<PaymentProductGroupResponse, ErrorResponse>> {
-  return function(merchantId, paymentProductGroupId, paymentContext): Promise<SdkResponse<PaymentProductGroupResponse, ErrorResponse>> {
+  return function (merchantId, paymentProductGroupId, paymentContext): Promise<SdkResponse<PaymentProductGroupResponse, ErrorResponse>> {
     return json(
       {
         method: "GET",

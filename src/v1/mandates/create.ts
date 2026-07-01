@@ -13,7 +13,7 @@ const requestSchema = require("../../../schemas/v1/CreateMandateRequest.json");
 export function create(
   sdkContext: SdkContext
 ): (merchantId: string, postData: CreateMandateRequest, paymentContext?: PaymentContext | null) => Promise<SdkResponse<CreateMandateResponse, ErrorResponse>> {
-  return function(merchantId, postData, paymentContext): Promise<SdkResponse<CreateMandateResponse, ErrorResponse>> {
+  return function (merchantId, postData, paymentContext): Promise<SdkResponse<CreateMandateResponse, ErrorResponse>> {
     // validate postData
     const isValidRequest = validate(postData, requestSchema);
     if (!isValidRequest.valid) {

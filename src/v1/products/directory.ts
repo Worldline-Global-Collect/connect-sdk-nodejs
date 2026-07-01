@@ -10,7 +10,7 @@ import { DirectoryParams } from "../model/products";
 export function directory(
   sdkContext: SdkContext
 ): (merchantId: string, paymentProductId: number, paymentContext: DirectoryParams) => Promise<SdkResponse<Directory, ErrorResponse>> {
-  return function(merchantId, paymentProductId, paymentContext): Promise<SdkResponse<Directory, ErrorResponse>> {
+  return function (merchantId, paymentProductId, paymentContext): Promise<SdkResponse<Directory, ErrorResponse>> {
     return json(
       {
         method: "GET",

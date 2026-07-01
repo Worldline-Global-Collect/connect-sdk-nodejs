@@ -31,11 +31,9 @@ describe("communicator", () => {
   });
 
   each(testData).test("with JSON response with status %d", async (status, isSuccess) => {
-    nock("http://test")
-      .get("/json")
-      .reply(status, {
-        id: 1
-      });
+    nock("http://test").get("/json").reply(status, {
+      id: 1
+    });
 
     const response = await communicator.json(
       {
@@ -52,11 +50,9 @@ describe("communicator", () => {
 
   describe("with JSON response requested as binary response", () => {
     test("with status 200", done => {
-      nock("http://test")
-        .get("/json")
-        .reply(200, {
-          id: 1
-        });
+      nock("http://test").get("/json").reply(200, {
+        id: 1
+      });
 
       communicator
         .json(
@@ -91,11 +87,9 @@ describe("communicator", () => {
     });
 
     each(testData.slice(1)).test("with status %d", async (status, isSuccess) => {
-      nock("http://test")
-        .get("/json")
-        .reply(status, {
-          id: 1
-        });
+      nock("http://test").get("/json").reply(status, {
+        id: 1
+      });
 
       const response = await communicator.json(
         {
@@ -161,11 +155,9 @@ describe("communicator", () => {
       const responseBody = "Test response";
       const contentType = "application/octet-stream";
 
-      nock("http://test")
-        .get("/binary")
-        .reply(status, responseBody, {
-          "Content-Type": contentType
-        });
+      nock("http://test").get("/binary").reply(status, responseBody, {
+        "Content-Type": contentType
+      });
 
       communicator
         .json(
@@ -200,9 +192,7 @@ describe("communicator", () => {
 
   test("with invalid JSON response", async () => {
     const responseBody = "Non-JSON";
-    nock("http://test")
-      .get("/non-json")
-      .reply(200, responseBody);
+    nock("http://test").get("/non-json").reply(200, responseBody);
 
     const error = await communicator
       .json(
@@ -222,9 +212,7 @@ describe("communicator", () => {
 
   test("with error", async () => {
     const errorMessage = "Unknown error occurred";
-    nock("http://test")
-      .get("/error")
-      .replyWithError(errorMessage);
+    nock("http://test").get("/error").replyWithError(errorMessage);
 
     const error = await communicator
       .json(

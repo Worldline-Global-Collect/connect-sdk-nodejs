@@ -8,7 +8,7 @@ import { ErrorResponse } from "../model/domain";
 import { DeleteTokenParams } from "../model/tokens";
 
 export function remove(sdkContext: SdkContext): (merchantId: string, tokenId: string, paymentContext: DeleteTokenParams) => Promise<SdkResponse<void, ErrorResponse>> {
-  return function(merchantId, tokenId, paymentContext): Promise<SdkResponse<void, ErrorResponse>> {
+  return function (merchantId, tokenId, paymentContext): Promise<SdkResponse<void, ErrorResponse>> {
     return json(
       {
         method: "DELETE",

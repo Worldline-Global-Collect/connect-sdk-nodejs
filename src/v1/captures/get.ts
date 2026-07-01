@@ -9,7 +9,7 @@ import { CaptureResponse, ErrorResponse } from "../model/domain";
 export function get(
   sdkContext: SdkContext
 ): (merchantId: string, captureId: string, paymentContext?: PaymentContext | null) => Promise<SdkResponse<CaptureResponse, ErrorResponse>> {
-  return function(merchantId, captureId, paymentContext): Promise<SdkResponse<CaptureResponse, ErrorResponse>> {
+  return function (merchantId, captureId, paymentContext): Promise<SdkResponse<CaptureResponse, ErrorResponse>> {
     return json(
       {
         method: "GET",

@@ -8,7 +8,7 @@ import { ErrorResponse, FindPaymentsResponse } from "../model/domain";
 import { FindPaymentsParams } from "../model/payments";
 
 export function find(sdkContext: SdkContext): (merchantId: string, paymentContext: FindPaymentsParams) => Promise<SdkResponse<FindPaymentsResponse, ErrorResponse>> {
-  return function(merchantId, paymentContext): Promise<SdkResponse<FindPaymentsResponse, ErrorResponse>> {
+  return function (merchantId, paymentContext): Promise<SdkResponse<FindPaymentsResponse, ErrorResponse>> {
     return json(
       {
         method: "GET",

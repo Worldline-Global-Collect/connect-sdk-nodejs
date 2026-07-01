@@ -460,6 +460,9 @@
         "initialSchemeTransactionId" : {
           "type" : "string"
         },
+        "originalTransactionLinkId" : {
+          "type" : "string"
+        },
         "paymentProductId" : {
           "type" : "integer",
           "maximum" : 2147483647
@@ -1331,6 +1334,9 @@
           "type" : "string"
         },
         "initialSchemeTransactionId" : {
+          "type" : "string"
+        },
+        "originalTransactionLinkId" : {
           "type" : "string"
         },
         "paymentProduct302SpecificInput" : {

@@ -9,7 +9,7 @@ import { ErrorResponse, PaymentResponse } from "../model/domain";
 export function processchallenged(
   sdkContext: SdkContext
 ): (merchantId: string, paymentId: string, paymentContext?: PaymentContext | null) => Promise<SdkResponse<PaymentResponse, ErrorResponse>> {
-  return function(merchantId, paymentId, paymentContext): Promise<SdkResponse<PaymentResponse, ErrorResponse>> {
+  return function (merchantId, paymentId, paymentContext): Promise<SdkResponse<PaymentResponse, ErrorResponse>> {
     return json(
       {
         method: "POST",

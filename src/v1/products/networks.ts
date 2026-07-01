@@ -10,7 +10,7 @@ import { NetworksParams } from "../model/products";
 export function networks(
   sdkContext: SdkContext
 ): (merchantId: string, paymentProductId: number, paymentContext: NetworksParams) => Promise<SdkResponse<PaymentProductNetworksResponse, ErrorResponse>> {
-  return function(merchantId, paymentProductId, paymentContext): Promise<SdkResponse<PaymentProductNetworksResponse, ErrorResponse>> {
+  return function (merchantId, paymentProductId, paymentContext): Promise<SdkResponse<PaymentProductNetworksResponse, ErrorResponse>> {
     return json(
       {
         method: "GET",

@@ -13,7 +13,7 @@ const requestSchema = require("../../../schemas/v1/CreateHostedCheckoutRequest.j
 export function create(
   sdkContext: SdkContext
 ): (merchantId: string, postData: CreateHostedCheckoutRequest, paymentContext?: PaymentContext | null) => Promise<SdkResponse<CreateHostedCheckoutResponse, ErrorResponse>> {
-  return function(merchantId, postData, paymentContext): Promise<SdkResponse<CreateHostedCheckoutResponse, ErrorResponse>> {
+  return function (merchantId, postData, paymentContext): Promise<SdkResponse<CreateHostedCheckoutResponse, ErrorResponse>> {
     // validate postData
     const isValidRequest = validate(postData, requestSchema);
     if (!isValidRequest.valid) {

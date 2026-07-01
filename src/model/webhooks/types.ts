@@ -1,5 +1,9 @@
 export class ApiVersionMismatchError extends Error {
-  public constructor(message: string, public readonly eventApiVersion: string, public readonly sdkApiVersion: string) {
+  public constructor(
+    message: string,
+    public readonly eventApiVersion: string,
+    public readonly sdkApiVersion: string
+  ) {
     super(message);
     // see https://github.com/Microsoft/TypeScript-wiki/blob/master/Breaking-Changes.md#extending-built-ins-like-error-array-and-map-may-no-longer-work
     Object.setPrototypeOf(this, ApiVersionMismatchError.prototype);
@@ -16,7 +20,10 @@ export interface InMemorySecretKeyStore extends SecretKeyStore {
 export type RequestHeaders = { [header: string]: string | string[] | undefined };
 
 export class SecretKeyNotAvailableError extends Error {
-  public constructor(message: string, public readonly keyId: string) {
+  public constructor(
+    message: string,
+    public readonly keyId: string
+  ) {
     super(message);
     // see https://github.com/Microsoft/TypeScript-wiki/blob/master/Breaking-Changes.md#extending-built-ins-like-error-array-and-map-may-no-longer-work
     Object.setPrototypeOf(this, SecretKeyNotAvailableError.prototype);

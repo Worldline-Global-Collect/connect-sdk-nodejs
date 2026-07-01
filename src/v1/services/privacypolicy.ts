@@ -8,7 +8,7 @@ import { ErrorResponse, GetPrivacyPolicyResponse } from "../model/domain";
 import { PrivacypolicyParams } from "../model/services";
 
 export function privacypolicy(sdkContext: SdkContext): (merchantId: string, paymentContext: PrivacypolicyParams) => Promise<SdkResponse<GetPrivacyPolicyResponse, ErrorResponse>> {
-  return function(merchantId, paymentContext): Promise<SdkResponse<GetPrivacyPolicyResponse, ErrorResponse>> {
+  return function (merchantId, paymentContext): Promise<SdkResponse<GetPrivacyPolicyResponse, ErrorResponse>> {
     return json(
       {
         method: "GET",

@@ -13,7 +13,7 @@ const requestSchema = require("../../../schemas/v1/GetInstallmentRequest.json");
 export function getInstallmentsInfo(
   sdkContext: SdkContext
 ): (merchantId: string, postData: GetInstallmentRequest, paymentContext?: PaymentContext | null) => Promise<SdkResponse<InstallmentOptionsResponse, ErrorResponse>> {
-  return function(merchantId, postData, paymentContext): Promise<SdkResponse<InstallmentOptionsResponse, ErrorResponse>> {
+  return function (merchantId, postData, paymentContext): Promise<SdkResponse<InstallmentOptionsResponse, ErrorResponse>> {
     // validate postData
     const isValidRequest = validate(postData, requestSchema);
     if (!isValidRequest.valid) {

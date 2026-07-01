@@ -7,7 +7,7 @@ import { PaymentContext, SdkContext, SdkResponse } from "../../model";
 import { ErrorResponse, PayoutResponse } from "../model/domain";
 
 export function get(sdkContext: SdkContext): (merchantId: string, payoutId: string, paymentContext?: PaymentContext | null) => Promise<SdkResponse<PayoutResponse, ErrorResponse>> {
-  return function(merchantId, payoutId, paymentContext): Promise<SdkResponse<PayoutResponse, ErrorResponse>> {
+  return function (merchantId, payoutId, paymentContext): Promise<SdkResponse<PayoutResponse, ErrorResponse>> {
     return json(
       {
         method: "GET",

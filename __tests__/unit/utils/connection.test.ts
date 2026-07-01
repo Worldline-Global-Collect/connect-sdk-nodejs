@@ -44,11 +44,9 @@ describe("connection logging", () => {
   describe("for sendJSON", () => {
     test("with no request body", done => {
       const path = "/no-request-body";
-      nock("http://test")
-        .get(path)
-        .reply(200, {
-          id: 1
-        });
+      nock("http://test").get(path).reply(200, {
+        id: 1
+      });
       const options: https.RequestOptions = {
         host: "test",
         protocol: "https",
@@ -74,11 +72,9 @@ describe("connection logging", () => {
 
     test("with request body", done => {
       const path = "/request-body";
-      nock("http://test")
-        .post(path)
-        .reply(200, {
-          id: 1
-        });
+      nock("http://test").post(path).reply(200, {
+        id: 1
+      });
       const options: https.RequestOptions = {
         host: "test",
         protocol: "https",
@@ -109,11 +105,9 @@ describe("connection logging", () => {
 
   test("for sendMultipart", done => {
     const path = "/multipart";
-    nock("http://test")
-      .post(path)
-      .reply(200, {
-        id: 1
-      });
+    nock("http://test").post(path).reply(200, {
+      id: 1
+    });
     const options: https.RequestOptions = {
       host: "test",
       protocol: "https",
@@ -142,9 +136,7 @@ describe("connection logging", () => {
 
   test("with no response body", done => {
     const path = "/no-response-body";
-    nock("http://test")
-      .get(path)
-      .reply(204);
+    nock("http://test").get(path).reply(204);
     const options: https.RequestOptions = {
       host: "test",
       protocol: "https",
@@ -178,9 +170,7 @@ describe("connection logging", () => {
     const responseBody = {
       id: 1
     };
-    nock("http://test")
-      .get(path)
-      .reply(200, responseBody);
+    nock("http://test").get(path).reply(200, responseBody);
     const options: https.RequestOptions = {
       host: "test",
       protocol: "https",
@@ -261,9 +251,7 @@ describe("connection logging", () => {
   test("with error", done => {
     const path = "/error";
     const errorMessage = "Unknown error occurred";
-    nock("http://test")
-      .get(path)
-      .replyWithError(errorMessage);
+    nock("http://test").get(path).replyWithError(errorMessage);
     const options: https.RequestOptions = {
       host: "test",
       protocol: "https",

@@ -13,7 +13,7 @@ const requestSchema = require("../../../schemas/v1/TokenizePaymentRequest.json")
 export function tokenize(
   sdkContext: SdkContext
 ): (merchantId: string, paymentId: string, postData: TokenizePaymentRequest, paymentContext?: PaymentContext | null) => Promise<SdkResponse<CreateTokenResponse, ErrorResponse>> {
-  return function(merchantId, paymentId, postData, paymentContext): Promise<SdkResponse<CreateTokenResponse, ErrorResponse>> {
+  return function (merchantId, paymentId, postData, paymentContext): Promise<SdkResponse<CreateTokenResponse, ErrorResponse>> {
     // validate postData
     const isValidRequest = validate(postData, requestSchema);
     if (!isValidRequest.valid) {

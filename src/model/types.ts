@@ -148,7 +148,11 @@ export interface SdkBinaryErrorResponse extends SdkSuccessResponse<Readable> {
 export type SdkBinaryResponse<E> = SdkBinarySuccessResponse | SdkErrorResponse<E>;
 
 export class SdkApiError<E> extends Error {
-  public constructor(message: string, public readonly status: number, public readonly body: E) {
+  public constructor(
+    message: string,
+    public readonly status: number,
+    public readonly body: E
+  ) {
     super(message);
     // see https://github.com/Microsoft/TypeScript-wiki/blob/master/Breaking-Changes.md#extending-built-ins-like-error-array-and-map-may-no-longer-work
     Object.setPrototypeOf(this, SdkApiError.prototype);

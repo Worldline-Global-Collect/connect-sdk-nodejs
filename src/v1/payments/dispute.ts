@@ -13,7 +13,7 @@ const requestSchema = require("../../../schemas/v1/CreateDisputeRequest.json");
 export function dispute(
   sdkContext: SdkContext
 ): (merchantId: string, paymentId: string, postData: CreateDisputeRequest, paymentContext?: PaymentContext | null) => Promise<SdkResponse<DisputeResponse, ErrorResponse>> {
-  return function(merchantId, paymentId, postData, paymentContext): Promise<SdkResponse<DisputeResponse, ErrorResponse>> {
+  return function (merchantId, paymentId, postData, paymentContext): Promise<SdkResponse<DisputeResponse, ErrorResponse>> {
     // validate postData
     const isValidRequest = validate(postData, requestSchema);
     if (!isValidRequest.valid) {

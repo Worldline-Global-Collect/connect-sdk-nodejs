@@ -24,10 +24,7 @@ async function validate(body: string | Buffer, requestHeaders: RequestHeaders, s
   const keyId = getHeaderValue(requestHeaders, "X-GCS-KeyId");
 
   const secretKey = await secretKeyStore.getSecretKey(keyId);
-  const expectedSignature = crypto
-    .createHmac("sha256", secretKey)
-    .update(body)
-    .digest("base64");
+  const expectedSignature = crypto.createHmac("sha256", secretKey).update(body).digest("base64");
   if (!compare(signature, expectedSignature)) {
     throw new Error(`failed to validate signature '${signature}'`);
   }

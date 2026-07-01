@@ -1,6 +1,6 @@
 {
   "name": "connect-sdk-nodejs",
-  "version": "8.1.1",
+  "version": "8.2.0",
   "description": "SDK to communicate with the Worldline Global Collect platform using the Worldline Connect Server API",
   "homepage": "https://github.com/Worldline-Global-Collect/connect-sdk-nodejs#readme",
   "bugs": {
@@ -55,7 +55,7 @@
     "jest-junit": "^16.0.0",
     "jest-runner-groups": "^2.2.0",
     "nock": "^13.5.6",
-    "prettier": "^1.19.1",
+    "prettier": "^3.8.4",
     "supertest": "^7.2.2",
     "ts-jest": "^29.4.9",
     "typedoc": "^0.28.19",
@@ -76,7 +76,9 @@
     ]
   },
   "prettier": {
-    "printWidth": 180
+    "printWidth": 180,
+    "trailingComma": "none",
+    "arrowParens": "avoid"
   },
   "husky": {
     "hooks": {

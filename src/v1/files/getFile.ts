@@ -7,7 +7,7 @@ import { PaymentContext, SdkBinaryResponse, SdkContext } from "../../model";
 import { ErrorResponse } from "../model/domain";
 
 export function getFile(sdkContext: SdkContext): (merchantId: string, fileId: string, paymentContext?: PaymentContext | null) => Promise<SdkBinaryResponse<ErrorResponse>> {
-  return function(merchantId, fileId, paymentContext): Promise<SdkBinaryResponse<ErrorResponse>> {
+  return function (merchantId, fileId, paymentContext): Promise<SdkBinaryResponse<ErrorResponse>> {
     return json(
       {
         method: "GET",

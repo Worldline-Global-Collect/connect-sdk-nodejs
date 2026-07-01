@@ -13,7 +13,7 @@ const requestSchema = require("../../../schemas/v1/RiskAssessmentBankAccount.jso
 export function bankaccounts(
   sdkContext: SdkContext
 ): (merchantId: string, postData: RiskAssessmentBankAccount, paymentContext?: PaymentContext | null) => Promise<SdkResponse<RiskAssessmentResponse, ErrorResponse>> {
-  return function(merchantId, postData, paymentContext): Promise<SdkResponse<RiskAssessmentResponse, ErrorResponse>> {
+  return function (merchantId, postData, paymentContext): Promise<SdkResponse<RiskAssessmentResponse, ErrorResponse>> {
     // validate postData
     const isValidRequest = validate(postData, requestSchema);
     if (!isValidRequest.valid) {

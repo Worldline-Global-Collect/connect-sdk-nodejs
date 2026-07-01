@@ -17,7 +17,7 @@ export function create(
   postData: CreateHostedMandateManagementRequest,
   paymentContext?: PaymentContext | null
 ) => Promise<SdkResponse<CreateHostedMandateManagementResponse, ErrorResponse>> {
-  return function(merchantId, postData, paymentContext): Promise<SdkResponse<CreateHostedMandateManagementResponse, ErrorResponse>> {
+  return function (merchantId, postData, paymentContext): Promise<SdkResponse<CreateHostedMandateManagementResponse, ErrorResponse>> {
     // validate postData
     const isValidRequest = validate(postData, requestSchema);
     if (!isValidRequest.valid) {

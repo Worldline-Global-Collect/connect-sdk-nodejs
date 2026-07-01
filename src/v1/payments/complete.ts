@@ -18,7 +18,7 @@ export function complete(
   postData: CompletePaymentRequest,
   paymentContext?: PaymentContext | null
 ) => Promise<SdkResponse<CompletePaymentResponse, ErrorResponse>> {
-  return function(merchantId, paymentId, postData, paymentContext): Promise<SdkResponse<CompletePaymentResponse, ErrorResponse>> {
+  return function (merchantId, paymentId, postData, paymentContext): Promise<SdkResponse<CompletePaymentResponse, ErrorResponse>> {
     // validate postData
     const isValidRequest = validate(postData, requestSchema);
     if (!isValidRequest.valid) {

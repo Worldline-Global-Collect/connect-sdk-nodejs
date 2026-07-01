@@ -9,7 +9,7 @@ import { ErrorResponse } from "../model/domain";
 export function remove(
   sdkContext: SdkContext
 ): (merchantId: string, hostedCheckoutId: string, paymentContext?: PaymentContext | null) => Promise<SdkResponse<void, ErrorResponse>> {
-  return function(merchantId, hostedCheckoutId, paymentContext): Promise<SdkResponse<void, ErrorResponse>> {
+  return function (merchantId, hostedCheckoutId, paymentContext): Promise<SdkResponse<void, ErrorResponse>> {
     return json(
       {
         method: "DELETE",

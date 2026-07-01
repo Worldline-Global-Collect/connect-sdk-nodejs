@@ -13,7 +13,7 @@ const requestSchema = require("../../../schemas/v1/CapturePaymentRequest.json");
 export function capture(
   sdkContext: SdkContext
 ): (merchantId: string, paymentId: string, postData: CapturePaymentRequest, paymentContext?: PaymentContext | null) => Promise<SdkResponse<CaptureResponse, ErrorResponse>> {
-  return function(merchantId, paymentId, postData, paymentContext): Promise<SdkResponse<CaptureResponse, ErrorResponse>> {
+  return function (merchantId, paymentId, postData, paymentContext): Promise<SdkResponse<CaptureResponse, ErrorResponse>> {
     // validate postData
     const isValidRequest = validate(postData, requestSchema);
     if (!isValidRequest.valid) {

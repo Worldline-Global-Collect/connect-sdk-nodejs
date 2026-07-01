@@ -18,7 +18,7 @@ export function deviceFingerprint(
   postData: DeviceFingerprintRequest,
   paymentContext?: PaymentContext | null
 ) => Promise<SdkResponse<DeviceFingerprintResponse, ErrorResponse>> {
-  return function(merchantId, paymentProductId, postData, paymentContext): Promise<SdkResponse<DeviceFingerprintResponse, ErrorResponse>> {
+  return function (merchantId, paymentProductId, postData, paymentContext): Promise<SdkResponse<DeviceFingerprintResponse, ErrorResponse>> {
     // validate postData
     const isValidRequest = validate(postData, requestSchema);
     if (!isValidRequest.valid) {

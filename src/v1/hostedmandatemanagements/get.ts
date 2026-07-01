@@ -9,7 +9,7 @@ import { ErrorResponse, GetHostedMandateManagementResponse } from "../model/doma
 export function get(
   sdkContext: SdkContext
 ): (merchantId: string, hostedMandateManagementId: string, paymentContext?: PaymentContext | null) => Promise<SdkResponse<GetHostedMandateManagementResponse, ErrorResponse>> {
-  return function(merchantId, hostedMandateManagementId, paymentContext): Promise<SdkResponse<GetHostedMandateManagementResponse, ErrorResponse>> {
+  return function (merchantId, hostedMandateManagementId, paymentContext): Promise<SdkResponse<GetHostedMandateManagementResponse, ErrorResponse>> {
     return json(
       {
         method: "GET",

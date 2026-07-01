@@ -13,7 +13,7 @@ const requestSchema = require("../../../schemas/v1/CreatePayoutRequest.json");
 export function create(
   sdkContext: SdkContext
 ): (merchantId: string, postData: CreatePayoutRequest, paymentContext?: PaymentContext | null) => Promise<SdkResponse<PayoutResponse, PayoutErrorResponse>> {
-  return function(merchantId, postData, paymentContext): Promise<SdkResponse<PayoutResponse, PayoutErrorResponse>> {
+  return function (merchantId, postData, paymentContext): Promise<SdkResponse<PayoutResponse, PayoutErrorResponse>> {
     // validate postData
     const isValidRequest = validate(postData, requestSchema);
     if (!isValidRequest.valid) {

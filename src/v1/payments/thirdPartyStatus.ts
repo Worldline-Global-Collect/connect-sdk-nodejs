@@ -9,7 +9,7 @@ import { ErrorResponse, ThirdPartyStatusResponse } from "../model/domain";
 export function thirdPartyStatus(
   sdkContext: SdkContext
 ): (merchantId: string, paymentId: string, paymentContext?: PaymentContext | null) => Promise<SdkResponse<ThirdPartyStatusResponse, ErrorResponse>> {
-  return function(merchantId, paymentId, paymentContext): Promise<SdkResponse<ThirdPartyStatusResponse, ErrorResponse>> {
+  return function (merchantId, paymentId, paymentContext): Promise<SdkResponse<ThirdPartyStatusResponse, ErrorResponse>> {
     return json(
       {
         method: "GET",

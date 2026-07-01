@@ -13,7 +13,7 @@ const requestSchema = require("../../../schemas/v1/GetIINDetailsRequest.json");
 export function getIINdetails(
   sdkContext: SdkContext
 ): (merchantId: string, postData: GetIINDetailsRequest, paymentContext?: PaymentContext | null) => Promise<SdkResponse<GetIINDetailsResponse, ErrorResponse>> {
-  return function(merchantId, postData, paymentContext): Promise<SdkResponse<GetIINDetailsResponse, ErrorResponse>> {
+  return function (merchantId, postData, paymentContext): Promise<SdkResponse<GetIINDetailsResponse, ErrorResponse>> {
     // validate postData
     const isValidRequest = validate(postData, requestSchema);
     if (!isValidRequest.valid) {

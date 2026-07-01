@@ -9,7 +9,7 @@ import { CancelPaymentResponse, ErrorResponse } from "../model/domain";
 export function cancel(
   sdkContext: SdkContext
 ): (merchantId: string, paymentId: string, paymentContext?: PaymentContext | null) => Promise<SdkResponse<CancelPaymentResponse, ErrorResponse>> {
-  return function(merchantId, paymentId, paymentContext): Promise<SdkResponse<CancelPaymentResponse, ErrorResponse>> {
+  return function (merchantId, paymentId, paymentContext): Promise<SdkResponse<CancelPaymentResponse, ErrorResponse>> {
     return json(
       {
         method: "POST",

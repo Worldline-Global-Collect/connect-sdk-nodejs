@@ -22,6 +22,7 @@ export interface AbstractCardPaymentMethodSpecificInput extends AbstractPaymentM
   authorizationMode?: string | null;
   customerReference?: string | null;
   initialSchemeTransactionId?: string | null;
+  originalTransactionLinkId?: string | null;
   recurring?: CardRecurrenceDetails | null;
   /**
    * @deprecated Use recurring.recurringPaymentSequenceIndicator instead
@@ -60,6 +61,7 @@ export interface AbstractMobilePaymentMethodSpecificInput extends AbstractPaymen
   authorizationMode?: string | null;
   customerReference?: string | null;
   initialSchemeTransactionId?: string | null;
+  originalTransactionLinkId?: string | null;
   recurring?: CardRecurrenceDetails | null;
   requiresApproval?: boolean | null;
   skipFraudService?: boolean | null;
@@ -541,10 +543,12 @@ export interface CardPaymentMethodSpecificOutput extends AbstractPaymentMethodSp
   initialSchemeTransactionId?: string | null;
   networkTokenData?: NetworkTokenData | null;
   networkTokenUsed?: boolean | null;
+  originalTransactionLinkId?: string | null;
   paymentAccountReference?: string | null;
   schemeTransactionId?: string | null;
   threeDSecureResults?: ThreeDSecureResults | null;
   token?: string | null;
+  transactionLinkId?: string | null;
 }
 
 export interface CardPayoutMethodSpecificInput extends AbstractPayoutMethodSpecificInput {
@@ -1700,10 +1704,12 @@ export interface MobilePaymentMethodSpecificOutput extends AbstractPaymentMethod
   fraudResults?: CardFraudResults | null;
   initialSchemeTransactionId?: string | null;
   network?: string | null;
+  originalTransactionLinkId?: string | null;
   paymentData?: MobilePaymentData | null;
   schemeTransactionId?: string | null;
   threeDSecureResults?: ThreeDSecureResults | null;
   token?: string | null;
+  transactionLinkId?: string | null;
 }
 
 export interface MobilePaymentProduct302SpecificInputHostedCheckout {

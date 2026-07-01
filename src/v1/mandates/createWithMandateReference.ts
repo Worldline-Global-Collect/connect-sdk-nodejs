@@ -18,7 +18,7 @@ export function createWithMandateReference(
   postData: CreateMandateRequest,
   paymentContext?: PaymentContext | null
 ) => Promise<SdkResponse<CreateMandateResponse, ErrorResponse>> {
-  return function(merchantId, uniqueMandateReference, postData, paymentContext): Promise<SdkResponse<CreateMandateResponse, ErrorResponse>> {
+  return function (merchantId, uniqueMandateReference, postData, paymentContext): Promise<SdkResponse<CreateMandateResponse, ErrorResponse>> {
     // validate postData
     const isValidRequest = validate(postData, requestSchema);
     if (!isValidRequest.valid) {

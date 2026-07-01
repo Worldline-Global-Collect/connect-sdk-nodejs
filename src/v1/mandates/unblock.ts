@@ -9,7 +9,7 @@ import { ErrorResponse, GetMandateResponse } from "../model/domain";
 export function unblock(
   sdkContext: SdkContext
 ): (merchantId: string, uniqueMandateReference: string, paymentContext?: PaymentContext | null) => Promise<SdkResponse<GetMandateResponse, ErrorResponse>> {
-  return function(merchantId, uniqueMandateReference, paymentContext): Promise<SdkResponse<GetMandateResponse, ErrorResponse>> {
+  return function (merchantId, uniqueMandateReference, paymentContext): Promise<SdkResponse<GetMandateResponse, ErrorResponse>> {
     return json(
       {
         method: "POST",

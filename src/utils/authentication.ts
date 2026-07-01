@@ -21,14 +21,14 @@ export function getV1HMACSignature(method: string, contentType: string, date: st
     .sort(compareHeaders)
     .map(header => `${header.key.toLowerCase()}:${header.value}\n`)
     .join("");
-  return crypto
-    .createHmac("SHA256", secretApiKey)
-    .update(`${method}\n${contentType}\n${date}\n${sortedHeaders}${path}\n`)
-    .digest("base64");
+  return crypto.createHmac("SHA256", secretApiKey).update(`${method}\n${contentType}\n${date}\n${sortedHeaders}${path}\n`).digest("base64");
 }
 
 export class V1HMACAuthenticator implements Authenticator {
-  constructor(private readonly apiKeyId: string, private readonly secretApiKey: string) {}
+  constructor(
+    private readonly apiKeyId: string,
+    private readonly secretApiKey: string
+  ) {}
 
   getAuthorization(method: string, contentType: string, date: string, headers: Header[], path: string): Promise<string> {
     const signature = getV1HMACSignature(method, contentType, date, headers, path, this.secretApiKey);
