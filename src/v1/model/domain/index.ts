@@ -98,8 +98,8 @@ export interface AbstractRedirectPaymentMethodSpecificInput extends AbstractPaym
 export interface AbstractRedirectPaymentProduct4101SpecificInput {}
 
 export interface AbstractRedirectPaymentProduct838SpecificInput {
-  interoperabilityData?: string | null;
-  interoperabilityToken?: string | null;
+  networkData?: string | null;
+  networkSessionToken?: string | null;
 }
 
 export interface AbstractRedirectPaymentProduct840SpecificInput {

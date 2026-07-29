@@ -2007,10 +2007,10 @@
     "RedirectPaymentProduct838SpecificInput" : {
       "type" : "object",
       "properties" : {
-        "interoperabilityData" : {
+        "networkData" : {
           "type" : "string"
         },
-        "interoperabilityToken" : {
+        "networkSessionToken" : {
           "type" : "string"
         }
       },
