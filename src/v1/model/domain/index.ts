@@ -2155,6 +2155,7 @@ export interface PaymentProducts {
 
 export interface PaymentReferences {
   merchantCaptureReference?: string | null;
+  merchantCustomerId?: string | null;
   merchantOrderId?: number | null;
   merchantReference?: string | null;
   paymentReference?: string | null;
